@@ -60,16 +60,76 @@ class JevDouble:
 
     def ask(self, payload):
         self.requests.append(copy.deepcopy(payload))
-        choice = next(self.choices)
-        if choice not in payload["questions"]["next_action"]["criteria"]:
-            raise AssertionError("Not in menu: " + choice)
+        questions = payload["questions"]
+        choice = getattr(self, "pending", None) or next(self.choices)
+        self.pending = None
+        def answer(key):
+            return {"choice": key, "confidence": .9, "probabilities": {key: .9}}
+        answers = {key: answer(next(iter(q["criteria"]))) for key, q in questions.items()}
+        if "operation" in questions:
+            kinds = {"app": "switch_app", "view": "view_page", "inputs": "input_page"}
+            kind = choice if choice in ("help_input", "help_reasoning", "review_completion", "wait") else kinds.get(choice.split("_")[0], choice.split("_")[0])
+            self.assert_choice(kind, questions["operation"])
+            answers["operation"] = answer(kind)
+            head = "target_" + kind
+            if head in questions:
+                target = choice
+                if kind in ("replace", "insert", "append"):
+                    text_id = next(k for k in sorted(payload["state"]["input_texts"], key=len, reverse=True) if choice.endswith("_" + k))
+                    field = choice[len(kind) + 1:-(len(text_id) + 1)]
+                    field = field or payload["state"]["observation"]["focused_element"]
+                    target = "field_" + str(field)
+                    self.pending = choice
+                if target not in questions[head]["criteria"]:
+                    target = next(k for k, v in questions[head]["criteria"].items() if isinstance(v, dict) and target in v)
+                    self.pending = choice
+                self.assert_choice(target, questions[head])
+                answers[head] = answer(target)
+        else:
+            head = next(iter(questions))
+            self.assert_choice(choice, questions[head])
+            answers[head] = answer(choice)
         self.usage["input_tokens"] += 100
         if self.callback:
             self.callback()
-        return {"answers": {"pause_now": {"choice": "continue", "confidence": 1, "probabilities": {"continue": 1, "pause": 0}}, "next_action": {"choice": choice, "confidence": .9, "probabilities": {choice: .9}}}}, .01
+        return {"answers": answers}, .01
+
+    @staticmethod
+    def assert_choice(choice, question):
+        if choice not in question["criteria"]:
+            raise AssertionError("Not in menu: " + choice)
 
 
 class TaskTests(unittest.TestCase):
+    def test_unrelated_timer_change_does_not_starve_missing_text_handoff(self):
+        with tempfile.TemporaryDirectory() as root:
+            computer = ComputerDouble()
+            computer.application, computer.focus = 'test', '1'
+            computer.notice = 'Time left: 98'
+            jev = JevDouble(['help_input'], lambda: setattr(computer, 'notice', 'Time left: 97'))
+            result = TaskRunner(computer, jev, root).run(task='Write the requested message')
+            self.assertEqual(result['reason'], 'help_input')
+            self.assertEqual(len(jev.requests), 1)
+            self.assertEqual(computer.calls, [])
+
+    def test_new_input_choice_is_seen_before_missing_text_handoff(self):
+        class Suggestions(ComputerDouble):
+            show = False
+            def observe(self):
+                value = super().observe()
+                if self.show:
+                    value['ui_tree'] += '\n  5 button Suggested value'
+                    value['controls']['5'] = {'id': '5', 'role': 'button', 'name': 'Suggested value', 'value': '', 'settable': False}
+                return value
+        with tempfile.TemporaryDirectory() as root:
+            computer = Suggestions()
+            computer.application, computer.focus = 'test', '1'
+            jev = JevDouble(['help_input', 'click_5', 'review_completion'], lambda: setattr(computer, 'show', True))
+            result = TaskRunner(computer, jev, root).run(task='Choose the suggested value')
+            self.assertEqual(result['reason'], 'review_completion')
+            self.assertEqual(len(computer.calls), 1)
+            self.assertEqual(computer.calls[0]['target']['id'], '5')
+
     def test_step_reuses_post_action_state_but_realtime_observes_each_cycle(self):
         for mode in ("step", "realtime"):
             with self.subTest(mode=mode), tempfile.TemporaryDirectory() as root:
@@ -88,13 +148,13 @@ class TaskTests(unittest.TestCase):
                 next_ui = jev.requests[1]["state"]["observation"]["ui_tree"]
                 self.assertIn("cycle 1" if mode == "step" else "cycle 2", next_ui)
 
-    def test_reasoning_gate_blocks_action_even_when_action_question_selects_a_click(self):
+    def test_reasoning_operation_ignores_conditional_click_target(self):
         class NeedsReasoning(JevDouble):
             def ask(self, payload):
                 response, seconds = super().ask(payload)
-                response["answers"]["pause_now"] = {
+                response["answers"]["operation"] = {
                     "choice": "help_reasoning", "confidence": .98,
-                    "probabilities": {"continue": .01, "pause": .01, "help_reasoning": .98}}
+                    "probabilities": {"click": .01, "review_completion": .01, "help_reasoning": .98}}
                 return response, seconds
         for mode in ("step", "realtime"):
             with self.subTest(mode=mode), tempfile.TemporaryDirectory() as root:
@@ -102,17 +162,48 @@ class TaskTests(unittest.TestCase):
                 computer.application = "test"
                 jev = NeedsReasoning(["click_2"])
                 result = TaskRunner(computer, jev, root).run(task="Choose the shortest option", mode=mode)
-                self.assertIn("help_reasoning", jev.requests[0]["questions"]["pause_now"]["criteria"])
+                self.assertIn("help_reasoning", jev.requests[0]["questions"]["operation"]["criteria"])
                 self.assertEqual(result["reason"], "help_reasoning")
                 self.assertEqual(computer.calls, [])
                 self.assertEqual(result["history"][-1]["action"]["type"], "help_reasoning")
                 self.assertIn("Result:", host_handoff(result)["current_observation"]["ui_tree"])
 
+    def test_high_continuation_does_not_authorize_a_diffuse_action(self):
+        class Diffuse(JevDouble):
+            def ask(self, payload):
+                response, seconds = super().ask(payload)
+                if len(self.requests) == 1:
+                    response['answers']['operation'] = {'choice': 'click', 'confidence': .19,
+                        'probabilities': {'click': .2, 'replace': .15, 'review_completion': .1}}
+                return response, seconds
+        with tempfile.TemporaryDirectory() as root:
+            computer = ComputerDouble()
+            computer.application = 'test'
+            jev = Diffuse(['click_2', 'review_completion'])
+            result = TaskRunner(computer, jev, root).run(task='Form is already correct')
+            self.assertEqual(result['reason'], 'review_completion')
+            self.assertEqual(computer.calls, [])
+            self.assertEqual(len(jev.requests), 2)
+            self.assertNotIn('next_action', jev.requests[1]['questions'])
+
+    def test_still_diffuse_review_yields_without_mutation(self):
+        class Diffuse(JevDouble):
+            def ask(self, payload):
+                response, seconds = super().ask(payload)
+                response['answers']['operation']['probabilities'] = {'click': .2}
+                return response, seconds
+        with tempfile.TemporaryDirectory() as root:
+            computer = ComputerDouble()
+            computer.application = 'test'
+            result = TaskRunner(computer, Diffuse(['click_2', 'click_2']), root).run(task='Continue')
+            self.assertEqual(result['reason'], 'uncertain_action')
+            self.assertEqual(computer.calls, [])
+
     def test_uncertain_continuation_blocks_a_high_confidence_click_in_same_call(self):
         class Uncertain(JevDouble):
             def ask(self, payload):
                 response, seconds = super().ask(payload)
-                response["answers"]["pause_now"] = {"choice": "continue", "confidence": .3, "probabilities": {"continue": .65, "pause": .35}}
+                response["answers"]["operation"] = {"choice": "click", "confidence": .65, "probabilities": {"click": .65, "review_completion": .35}}
                 return response, seconds
         for threshold in (.9, .6):
             with self.subTest(threshold=threshold), tempfile.TemporaryDirectory() as root:
@@ -123,6 +214,20 @@ class TaskTests(unittest.TestCase):
                 self.assertEqual(len(jev.requests), 1)
                 self.assertEqual(len(computer.calls), 0 if threshold == .9 else 1)
                 self.assertEqual(result["reason"], "uncertain_continuation" if threshold == .9 else "step_budget")
+
+    def test_date_field_renumbering_does_not_verify_neighboring_time_field(self):
+        class RenumberedDates(ComputerDouble):
+            def observe(self):
+                raw = ('0 standard window Form\n 1 日期时间区域 (settable, date) Value: 4/12/27\nThe focused UI element is 1' if not self.value else
+                       f'0 standard window Form\n 1 日期时间区域 (settable, date) Value: 8:00 AM\n 9 日期时间区域 (settable, date) Value: {self.value}\nThe focused UI element is 9')
+                return describe_window(raw, 'test', [])
+        with tempfile.TemporaryDirectory() as root:
+            computer = RenumberedDates()
+            computer.application = 'test'
+            result = TaskRunner(computer, JevDouble(['replace_date', 'review_completion']), root).run(
+                task='Change date', input_texts={'date': {'text': '8/19/27', 'purpose': 'date'}})
+            self.assertEqual(result['reason'], 'review_completion')
+            self.assertEqual(result['history'][1]['result']['observed_value'], '8/19/27')
 
     def test_placeholder_field_keeps_identity_after_native_value_appears(self):
         class PlaceholderComputer(ComputerDouble):
@@ -139,6 +244,33 @@ class TaskTests(unittest.TestCase):
             self.assertEqual(result["reason"], "review_completion")
             effect = next(e["result"] for e in result["history"] if e.get("action", {}).get("type") == "replace")
             self.assertEqual(effect["verification"], "exact_value")
+
+    def test_input_verification_follows_renumbered_editable_focus(self):
+        class Renumbered(ComputerDouble):
+            def observe(self):
+                ref = '7' if self.value else '1'
+                label = self.value or 'Compose'
+                return describe_window(f'0 standard window Form\n {ref} 文本输入区 (settable) {label}\n 9 button Send\nThe focused UI element is {ref}', 'test', [])
+        with tempfile.TemporaryDirectory() as root:
+            computer = Renumbered()
+            computer.application = 'test'
+            result = TaskRunner(computer, JevDouble(['replace_message', 'review_completion']), root).run(
+                task='Fill the message', input_texts={'message': {'text': 'Different message', 'purpose': 'message'}})
+            self.assertEqual(result['reason'], 'review_completion')
+            self.assertEqual(result['history'][-2]['result']['verification'], 'displayed_text')
+
+    def test_plain_text_input_is_not_verified_using_date_normalization(self):
+        class Reformatter(ComputerDouble):
+            def execute(self, action):
+                super().execute(action)
+                if action['type'] == 'replace':
+                    self.value = '7:30 AM'
+        with tempfile.TemporaryDirectory() as root:
+            computer = Reformatter()
+            computer.application, computer.focus = 'test', '1'
+            result = TaskRunner(computer, JevDouble(['replace_message']), root).run(
+                task='Fill literal text', input_texts={'message': {'text': '07:30', 'purpose': 'literal message'}})
+            self.assertEqual(result['reason'], 'input_unverified')
 
     def test_native_text_targets_and_unlabelled_fields_are_executable(self):
         obs = describe_window('0 standard window Test\n 1 text Begin\n 2 text field (settable)\n 3 text Airport option', "test", [])
@@ -196,22 +328,49 @@ class TaskTests(unittest.TestCase):
             self.assertFalse(result["global_completion"])
             self.assertEqual(computer.result, "hello")
             self.assertEqual([a["type"] for a in computer.calls], ["switch_app", "click", "replace", "key"])
-            self.assertEqual(len(jev.requests), 5)
-            self.assertTrue(all(list(p["questions"]) == ["pause_now", "next_action"] for p in jev.requests))
-            self.assertNotIn("replace_message", jev.requests[1]["questions"]["next_action"]["criteria"])
-            self.assertIn("replace_message", jev.requests[2]["questions"]["next_action"]["criteria"])
-            self.assertIn("click_1", jev.requests[1]["questions"]["next_action"]["criteria"])
-            self.assertNotIn("click_1", jev.requests[2]["questions"]["next_action"]["criteria"])
-            self.assertIn("help_input", jev.requests[2]["questions"]["next_action"]["criteria"])
+            self.assertEqual(len(jev.requests), 6)
+            self.assertTrue(all("next_action" not in p["questions"] for p in jev.requests))
+            self.assertIn("field_1", jev.requests[1]["questions"]["target_replace"]["criteria"])
+            self.assertIn("click_1", jev.requests[1]["questions"]["target_click"]["criteria"])
+            self.assertNotIn("click_1", jev.requests[2]["questions"]["target_click"]["criteria"])
+            self.assertIn("help_input", jev.requests[2]["questions"]["operation"]["criteria"])
+            self.assertEqual(jev.requests[3]["state"]["selected_target"]["id"], "1")
+            self.assertIn("replace_message", jev.requests[3]["questions"]["input_value"]["criteria"])
             status = read_status(root)
             self.assertEqual(status["history"], result["history"])
             self.assertNotIn("context", status)
-            self.assertEqual(status["usage"]["jev"]["input_tokens"], 500)
-            self.assertEqual(status["usage"]["jev_cost_usd"], .0005)
+            self.assertEqual(status["usage"]["jev"]["input_tokens"], 600)
+            self.assertEqual(status["usage"]["jev_cost_usd"], .0006)
             records = [json.loads(line) for line in Path(status["history_location"]).read_text().splitlines()]
-            self.assertEqual(sum(r["kind"] == "decision" for r in records), 5)
+            self.assertEqual(sum(r["kind"] == "decision" for r in records), 6)
             self.assertEqual(Path(status["history_location"]).stat().st_mode & 0o777, 0o600)
             self.assertTrue(complete_task(root, "Verified: hello")["global_completion"])
+
+    def test_window_change_during_value_choice_prevents_input(self):
+        with tempfile.TemporaryDirectory() as root:
+            computer = ComputerDouble()
+            computer.application = "test"
+            jev = JevDouble(["replace_1_message", "review_completion"])
+            def change_window():
+                if len(jev.requests) == 2:
+                    computer.window = "Another form"
+            jev.callback = change_window
+            result = TaskRunner(computer, jev, root).run(
+                task="Fill Message", input_texts={"message": {"text": "hello", "purpose": "Message"}})
+            self.assertEqual(computer.calls, [])
+            self.assertEqual(result["reason"], "review_completion")
+            self.assertTrue(any(e["result"].get("reason") == "target_changed" for e in result["history"]))
+
+    def test_wait_and_completion_use_one_operation_choice(self):
+        with tempfile.TemporaryDirectory() as root:
+            computer = ComputerDouble()
+            computer.application = "test"
+            jev = JevDouble(["wait", "review_completion"])
+            result = TaskRunner(computer, jev, root).run(task="Wait for the result", period_ms=100)
+            self.assertEqual(result["reason"], "review_completion")
+            self.assertEqual(result["history"][0]["action"]["type"], "wait")
+            self.assertNotIn("pause_now", jev.requests[0]["questions"])
+            self.assertEqual(len(jev.requests), 2)
 
     def test_host_input_and_reasoning_resume_preserve_whole_history(self):
         with tempfile.TemporaryDirectory() as root:
@@ -225,7 +384,7 @@ class TaskTests(unittest.TestCase):
             context = second_jev.requests[0]["state"]
             self.assertEqual(context["task"], "Complete this task")
             self.assertEqual(context["history"][-1]["actor"], "agent")
-            self.assertEqual(second["usage"]["jev"]["input_tokens"], 600)
+            self.assertEqual(second["usage"]["jev"]["input_tokens"], 700)
             self.assertEqual(second["current_application"], "mail")
 
     def test_history_is_not_last_five_and_ui_is_not_keyword_filtered(self):
@@ -322,7 +481,7 @@ class TaskTests(unittest.TestCase):
             computer.notice = 'Complete large interface text\n' * 5000
             jev = JevDouble([])
             with patch.object(computer, 'observe', wraps=computer.observe) as observe:
-                result = TaskRunner(computer, jev, root).run(task='Inspect this interface')
+                result = TaskRunner(computer, jev, root).run(task='Inspect this interface', max_context_bytes=1)
                 reads = observe.call_count
                 handoff = host_handoff(result)
                 self.assertEqual(observe.call_count, reads)
@@ -347,7 +506,7 @@ class TaskTests(unittest.TestCase):
             result = TaskRunner(ComputerDouble(), jev, root).run(task="Test", mode="realtime", period_ms=100, recheck_target=False)
             self.assertEqual(result["period_ms"], 100)
             self.assertGreaterEqual(result["elapsed_seconds"], .1)
-            self.assertEqual(list(jev.requests[-1]["questions"]), ["pause_now", "next_action"])
+            self.assertIn("operation", jev.requests[-1]["questions"])
 
     def test_status_cli_is_read_only_and_includes_history(self):
         with tempfile.TemporaryDirectory() as root:
@@ -382,17 +541,17 @@ class TaskTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as root:
             computer = WideComputer()
             computer.application = "test"
-            jev = JevDouble(["group_1", "click_1299"])
+            jev = JevDouble(["click_1299"])
             result = TaskRunner(computer, jev, root).run(task="Select Item 1299", max_steps=1)
             self.assertEqual(result["reason"], "step_budget")
             self.assertEqual(computer.focus, "1299")
             self.assertEqual(len(computer.calls), 1)
-            grouped = jev.requests[0]["questions"]["next_action"]["criteria"]
+            grouped = jev.requests[0]["questions"]["target_click"]["criteria"]
             keys = [key for group in grouped.values() for key in group]
             self.assertEqual(len(keys), len(set(keys)))
             self.assertTrue(all(f"click_{i}" in keys for i in range(1000, 1300)))
             self.assertEqual(jev.requests[0]["state"], jev.requests[1]["state"])
-            self.assertLessEqual(len(jev.requests[1]["questions"]["next_action"]["criteria"]), 255)
+            self.assertLessEqual(len(jev.requests[1]["questions"]["target_click"]["criteria"]), 255)
 
     def test_compact_history_and_handoff_keep_full_raw_observation_available(self):
         with tempfile.TemporaryDirectory() as root:

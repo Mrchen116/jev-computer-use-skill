@@ -31,6 +31,7 @@ class NativeCUA:
 
     def __init__(self, config=None, permission_handler=None):
         self.permission_handler = permission_handler
+        self._app_approvals = set()
         self.config, cfg = runtime_configuration(config)
         # No Codex thread metadata, login tokens, or API keys are needed for transport.
         env = {k: os.environ[k] for k in ('HOME', 'PATH', 'TMPDIR', 'USER', 'SHELL') if k in os.environ}
@@ -76,17 +77,27 @@ class NativeCUA:
         if self.permission_handler:
             self.send({'jsonrpc': '2.0', 'id': request['id'], 'result': self.permission_handler(params)})
             return
-        print('\nComputer Use permission request:', params.get('message', ''), file=sys.stderr)
         schema = params.get('requestedSchema', {})
+        # Reuse only this process's explicit approval of the identical, empty
+        # app-access form. Other permission forms always go back to the user.
+        app_form = bool(re.fullmatch(r'Allow Computer Use to use "[^"]+"\?', params.get('message', '')) and schema == {'properties': {}, 'type': 'object'})
+        approval = params.get('message', '')
+        if app_form and approval in self._app_approvals:
+            self.send({'jsonrpc': '2.0', 'id': request['id'], 'result': {'action': 'accept', 'content': {}}})
+            return
+        print('\nComputer Use permission request:', params.get('message', ''), file=sys.stderr)
         result = {'action': 'cancel'}
         if sys.stdin.isatty():
             print(json.dumps(schema, ensure_ascii=False, indent=2), file=sys.stderr)
-            raw = input('Enter form fields as JSON to approve, or press Enter to cancel: ').strip()
+            print('Enter form fields as JSON to approve, or press Enter to cancel: ', end='', file=sys.stderr, flush=True)
+            raw = input().strip()
             if raw:
                 content = json.loads(raw)
                 if not isinstance(content, dict):
                     raise ValueError('Permission form response must be a JSON object')
                 result = {'action': 'accept', 'content': content}
+                if app_form and content == {}:
+                    self._app_approvals.add(approval)
         self.send({'jsonrpc': '2.0', 'id': request['id'], 'result': result})
 
     def request(self, method, params):

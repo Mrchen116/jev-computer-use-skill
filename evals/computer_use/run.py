@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import signal
@@ -98,11 +99,11 @@ def _run_one(server, case, seed, arm, root, key_file, timeout):
         desktop.execute({"verb": "keyboard"}, "super+n")
         desktop.execute({"verb": "app", "app": "com.google.Chrome"})
         address = desktop.execute({"verb": "keyboard"}, "super+l")
-        if len(address["fields"]) != 1:
-            raise RuntimeError(
-                "Expected one address field in a new empty benchmark window"
-            )
-        desktop.execute(address["fields"][0], url)
+        focus = re.search(r"The focused UI element is (\d+)\b", address["raw"])
+        fields = [field for field in address["fields"] if focus and field["ref"] == focus[1]]
+        if len(fields) != 1:
+            raise RuntimeError("Expected a focused address field after the location shortcut")
+        desktop.execute(fields[0], url)
         loaded = desktop.execute({"verb": "enter"})
         load_deadline = time.monotonic() + 30
         while True:

@@ -6,6 +6,9 @@ from .runtime import NativeCUA
 
 # These are macOS AX role descriptions, not website-specific selectors.
 ROLE_NAMES = {
+    '文本输入区': 'textbox', '搜索文本栏': 'textbox', 'search text field': 'textbox',
+    '日期时间区域': 'datefield', 'date time area': 'datefield',
+    '日程': 'event', '列表': 'list', '内容列表': 'list', 'list': 'list',
     '文本栏': 'textbox', '文本字段': 'textbox', '文本框': 'textbox', '文本区域': 'textbox',
     'text field': 'textbox', 'text area': 'textbox', 'combo box': 'textbox', '组合框': 'textbox',
     '按钮': 'button', 'button': 'button', '弹出式按钮': 'button', 'pop up button': 'button',
@@ -16,7 +19,8 @@ ROLE_NAMES = {
     'HTML 内容': 'webarea', 'web area': 'webarea',
     '菜单栏': 'menubar', 'menu bar': 'menubar',
     '文本': 'text', 'text': 'text', 'static text': 'text', '标题': 'heading', 'heading': 'heading',
-    'container': 'container',
+    'container': 'container', '列表框': 'listbox', 'list box': 'listbox', 'listbox': 'listbox',
+    '表格': 'table', 'table': 'table', 'row': 'row', '行': 'row', '单元格': 'cell', 'cell': 'cell',
 }
 ROLE_NAMES = {k.lower(): v for k, v in ROLE_NAMES.items()}
 ROLE_PATTERN = '|'.join(re.escape(s) for s in sorted(ROLE_NAMES, key=len, reverse=True))
@@ -28,6 +32,8 @@ PAGE_SIZE = 130
 def nodes(raw):
     parsed = []
     for line in raw.splitlines():
+        if line.startswith("The focused UI element is "):
+            continue
         match = NODE.match(line)
         if not match:
             # AX text values can span lines (e.g. a receipt or saved JSON). Keeping

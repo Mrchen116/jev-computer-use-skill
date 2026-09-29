@@ -1,0 +1,264 @@
+{
+  "date": "2026-09-29",
+  "runs": [
+    {
+      "run": "jev-flights-scoped-ej3u_n_y/1",
+      "batch": "interrupted_development",
+      "reason": "review_completion",
+      "seconds": 66.498,
+      "api_calls": 27,
+      "api_phases": {
+        "operation_target": 20,
+        "input_value": 4,
+        "review_operation_target": 3
+      },
+      "usage": {
+        "input_tokens": 393746,
+        "output_tokens": 35274
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flow": {
+        "switch_app": 1,
+        "key": 3,
+        "replace": 3,
+        "click": 11,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "error_messages": [],
+      "flights": {
+        "options": 21,
+        "result_count_announced": false,
+        "route": true,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_text_in_ax": true
+      }
+    },
+    {
+      "run": "jev-flights-scoped-ej3u_n_y/2",
+      "batch": "interrupted_development",
+      "reason": "execution_error",
+      "seconds": 83.312,
+      "api_calls": 17,
+      "api_phases": {
+        "operation_target": 12,
+        "input_value": 3,
+        "review_operation_target": 1,
+        "review_input_value": 1
+      },
+      "usage": {
+        "input_tokens": 177379,
+        "output_tokens": 15611
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flow": {
+        "switch_app": 1,
+        "key": 3,
+        "replace": 3,
+        "click": 5
+      },
+      "error_messages": [
+        "Sky Computer Use native pipe closed before response"
+      ],
+      "flights": {
+        "options": 0,
+        "result_count_announced": false,
+        "route": true,
+        "one_way": false,
+        "economy": false,
+        "one_adult": false,
+        "date": false,
+        "loading_text_in_ax": false
+      }
+    },
+    {
+      "run": "jev-flights-scoped-drq8h7_8/1",
+      "batch": "final",
+      "reason": "review_completion",
+      "seconds": 37.121,
+      "api_calls": 27,
+      "api_phases": {
+        "operation_target": 20,
+        "input_value": 4,
+        "review_operation_target": 3
+      },
+      "usage": {
+        "input_tokens": 394865,
+        "output_tokens": 35391
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flow": {
+        "switch_app": 1,
+        "key": 3,
+        "replace": 3,
+        "click": 11,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "error_messages": [],
+      "flights": {
+        "options": 21,
+        "result_count_announced": true,
+        "route": true,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_text_in_ax": false
+      }
+    },
+    {
+      "run": "jev-flights-scoped-drq8h7_8/2",
+      "batch": "final",
+      "reason": "review_completion",
+      "seconds": 37.576,
+      "api_calls": 29,
+      "api_phases": {
+        "operation_target": 21,
+        "input_value": 5,
+        "review_operation_target": 2,
+        "review_input_value": 1
+      },
+      "usage": {
+        "input_tokens": 414670,
+        "output_tokens": 35041
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flow": {
+        "switch_app": 1,
+        "key": 3,
+        "replace": 4,
+        "click": 11,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "error_messages": [],
+      "flights": {
+        "options": 21,
+        "result_count_announced": true,
+        "route": true,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_text_in_ax": false
+      }
+    },
+    {
+      "run": "jev-flights-scoped-drq8h7_8/3",
+      "batch": "final",
+      "reason": "review_completion",
+      "seconds": 35.618,
+      "api_calls": 25,
+      "api_phases": {
+        "operation_target": 20,
+        "input_value": 3,
+        "review_operation_target": 2
+      },
+      "usage": {
+        "input_tokens": 357451,
+        "output_tokens": 33300
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flow": {
+        "switch_app": 1,
+        "key": 3,
+        "replace": 3,
+        "click": 10,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "error_messages": [],
+      "flights": {
+        "options": 21,
+        "result_count_announced": true,
+        "route": true,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_text_in_ax": false
+      }
+    },
+    {
+      "run": "jev-doubao-scoped-obnn4z2j/.",
+      "batch": "final",
+      "reason": "review_completion",
+      "seconds": 17.391,
+      "api_calls": 13,
+      "api_phases": {
+        "operation_target": 9,
+        "input_value": 3,
+        "review_operation_target": 1
+      },
+      "usage": {
+        "input_tokens": 173450,
+        "output_tokens": 14570
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flow": {
+        "switch_app": 1,
+        "key": 2,
+        "replace": 3,
+        "click": 1,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "error_messages": [],
+      "doubao": {
+        "hello_visible": true,
+        "reply_visible": true,
+        "sent_and_empty_editor_manually_verified": true
+      }
+    }
+  ],
+  "source_sha256": {
+    "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+    "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "ddbf2bc6546ea69a064a842bd3db156d29d8d2c4f5a1767db6917c6db9293381",
+    "skills/jev-computer-use/scripts/jev_computer_use/models.py": "61e342b2fa242c8dd8c756d4341a9e3b38238d0037ff777f4f16dd8dcee57a74",
+    "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+    "skills/jev-computer-use/scripts/jev_computer_use/observations.py": "4a197332e4c12c2a60be5c7fef4ad71badd583d2917073d71dfc99920d49a97a",
+    "skills/jev-computer-use/scripts/jev_computer_use/decisions.py": "0abfb4aa9f8bb3fadbbd6ef7bef9465af3d8663a97ca57ac871798edfa7ff7fd",
+    "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+    "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "78e1d0f2f44cadbe02f91649a5d6b520061fc85c8a7c115e81ab94cda94bc51c",
+    "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "80f5edc823b43d78581c455d0c8459af22f0a49205e692f3a1d6f70763e3c040",
+    "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "14d6ca14c3f2529a25cd36829a87d4ade6fe47f4ca27ae53bf79fb47c3bfe970",
+    "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+    "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "6f25ab90bb2f3ec2b18575374ffe5b7a171af03bfee4ec2eeb94f33b40f5185e",
+    "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+    "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "6bead55dcd64843c737cdee64a706c85e5bd95a459c268d1df1a4f6907e35414",
+    "skills/jev-computer-use/scripts/jev_computer_use/calendar_view.py": "b901f02f0f13ea1aab19bebde2bd74f08773ccb6ae35b7689741a52a8da3cbd9",
+    "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+    "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "19ba3c7379d2982c90d30b03fbc602f46f0ed42bd168c885868a41d63ca092d3",
+    "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+    "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+    "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "4a1f9e42b0704dfe11545a19ec034c76ad6360c8bc8ad8a7863c9ca6b3b5c54e",
+    "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+    "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+    "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "8f321d1479035f652698b0b976a1f5c30331f3b8ffccc3bf91b706fba1059066",
+    "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+    "skills/jev-computer-use/SKILL.md": "f63b66907b86329a6ca49f372eee17e83368646a352cfb1240be6c6e05a3ea8c",
+    "skills/jev-computer-use/references/tasks.md": "39a65e6cd87b36032f5878a67c6780824371a16879384b056283125a76ec6d8d"
+  },
+  "notes": [
+    "Raw native/model traces stay private and outside Git.",
+    "Chrome was already running; the fixture opened a neutral blank tab, then Jev itself selected Chrome, opened a new tab and entered the destination URL. Cold application launch was not tested.",
+    "Final Google Flights batch is three fresh runs with no intermediate host guidance or task UI actions.",
+    "An earlier batch had one pass and one native pipe interruption; its third run was not started. The failed transport attempt is retained separately, not counted as a pass."
+  ]
+}

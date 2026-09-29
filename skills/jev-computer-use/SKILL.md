@@ -7,9 +7,14 @@ description: Delegate sustained computer interaction to fast System One Jev usin
 
 You are System Two; Jev handles stretches of recognizable UI choices. Delegate
 navigation, known-value forms and repeated reactive controls. Handle single
-operations, comparison, ranking, arithmetic and synthesis yourself. For mixed
-work, delegate the interaction and resolve reasoning yourself, including on resume:
-give Jev a specific conclusion, never an instruction to perform the comparison.
+operations, ranking alternatives, calculation and open-ended synthesis yourself.
+Matching supplied constraints and checking or correcting field values (including
+date/time formats) are routine interaction, not a reasoning handoff. For mixed
+work, delegate the interaction with an explicit stopping boundary before the
+comparison or judgment (for example, display the options and stop before choosing).
+Do not delegate the full comparison/selection instruction and rely on a generic
+reasoning rule to stop Jev. Resolve reasoning yourself, including on resume: give
+Jev a specific conclusion, never an instruction to perform the comparison.
 Resume when a useful interaction stretch remains. No predicted UI plan needed.
 
 ## Choose observation and actions
@@ -36,7 +41,8 @@ the CLI route. Otherwise call it through its **registered tool interface**; do n
 invent a `functions.exec` wrapper alias. Use a new private `state_dir` per task.
 Supply only:
 
-- `task`: the whole goal and **task-specific** constraints, briefly. Code already
+- `task`: the whole delegated interaction goal and **task-specific** constraints,
+  briefly. For mixed tasks, explicitly stop at the boundary before host reasoning. Code already
   supplies generic interaction, input, authorization and stopping rules to Jev;
   do not restate them as a list of prohibitions or generate a UI script.
 - `mode`: `step` for sequential work; `realtime` for an interface changing on its
@@ -46,18 +52,27 @@ Supply only:
   `{"id":{"text":"literal value","purpose":"what this value is for"}}`.
   Prepare known names, search criteria and destinations from the task without
   waiting to see the fields. Unknown widget types do not make known values unknown.
-  Each entry is copied verbatim into one focused field; Jev cannot split, extract,
-  rewrite or format it. A combined query is appropriate only when that whole phrase
+  Each entry can be copied verbatim or appended to a field’s observed text with a space. The runner also retains
+  dates read from the UI, with their source labels, for later date-field entry;
+  Jev selects the matching source. It does not invent missing values. A combined
+  query is appropriate only when that whole phrase
   is intended for one field. The purpose describes meaning, not a predicted UI ID.
   For “fill name Lin and city Paris”, supply two entries: Lin/name and Paris/city,
   even before seeing their field labels. These are values to enter, **not labels
-  of buttons or checkboxes to click**. Use `{}` for click-only work. Leave genuinely
-  unknown text for a later handoff; missing text does not make a field optional.
+  of buttons or checkboxes to click**. Use `{}` for click-only work. Do not pre-resolve facts the user asks Jev to find
+  in the UI. Leave genuinely
+  unknown authored text for a later handoff; missing text does not make a field optional.
 
 Omit other options unless this task needs them. `guidance` carries your specific
 conclusion or an unusual work boundary, not generic reasoning instructions.
-The runner supplies the complete current accessibility tree, every concise step,
-input texts and warnings to Jev. It uses no screenshots or nested LLM.
+The runner supplies the current accessibility tree in bounded, navigable pages,
+every concise step, input texts and warnings to Jev. Accumulated UI date values
+are also paged, with recent sources first; caller-supplied values stay visible. Raw observations remain
+complete in the task log and final handoff. Jev selects the operation and compatible
+target together, then chooses a prepared value, reconsiders an incorrect input
+target, or hands back genuinely missing text. Choice selectors can open their options without authored text.
+Completion and reasoning handoff are choices in the same operation decision,
+not a separate stop vote. It uses no screenshots or nested LLM.
 
 ## Manage the handoff
 

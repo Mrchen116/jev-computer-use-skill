@@ -14,6 +14,8 @@ agent. Offline tests validate code contracts; they are not task-success evidence
   amounts and a full normal-speed recording.
 - [Game adapter experiment](games/README.md): live third-party tower defense,
   custom observations/actions and unaccelerated recording.
+- [Native desktop generalization follow-up](../docs/desktop-generalization.md):
+  shared field/menu fixes, two motivating cases, and a failed cross-year variant.
 - [Current verification scope](../docs/testing.md).
 
 ## Evidence layout
@@ -38,3 +40,9 @@ the outer LLM and Jev. They are not subscription deductions. Small reused sample
 and historical CLI-version drift do not establish universal reliability or causal
 speed/cost superiority. Never rerun a personal-desktop benchmark unattended against
 real messages, purchases or personal documents.
+
+- [2026-09-29 native generalization repair](computer_use/GENERALIZATION-20260929.md): end-to-end Flights/Doubao and the three-type, three-seed MiniWoB++ follow-up.
+
+- [Input-branch rejection follow-up](computer_use/RESELECTION-20260929.md): false missing-text handoff repaired; native calendar autonomy remains unresolved.
+
+- [Field grounding and widget semantics](computer_use/GROUNDED-ACTIONS-20260929.md): final nine-run MiniWoB acceptance with autonomous booking navigation, explicit host reasoning/text boundaries, and retained development failures.

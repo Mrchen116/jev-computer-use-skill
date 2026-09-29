@@ -15,23 +15,23 @@ from .tasks import TaskRunner, complete_task, host_handoff
 
 TOOL = {
     "name": "delegate_task",
-    "description": "Delegate sustained text-accessible UI work to Jev; keep reasoning and final verification yourself. Generic interaction rules are built in. Handoff includes the current UI, history and takeover.js_binding in the same native session. Resume the same state_dir. Use this registered tool directly, not an invented wrapper alias.",
+    "description": "Delegate sustained text-accessible UI interaction to Jev. Keep comparison, ranking, calculation and final verification yourself: end the delegated task explicitly before that decision, then provide your concrete conclusion if further interaction remains. Handoff includes the current UI, history and takeover.js_binding in the same native session. Resume the same state_dir. Use this registered tool directly, not an invented wrapper alias.",
     "inputSchema": {
         "type": "object",
         "properties": {
             "state_dir": {"type": "string", "description": "Private persistent task directory outside repositories; new directory for a new task"},
-            "task": {"type": "string", "description": "Whole goal plus task-specific constraints, briefly; omit on resume. Do not restate generic computer-use rules or predict a UI route."},
+            "task": {"type": "string", "description": "Delegated interaction goal and task-specific constraints; omit on resume. If the user goal requires comparison/ranking/calculation, explicitly stop when its inputs/options are visible, before making that decision. Do not pass the whole reasoning task to Jev or predict a UI route."},
             "mode": {"type": "string", "enum": ["step", "realtime"], "description": "step for sequential work; realtime for interfaces changing on their own clock."},
             "period_ms": {"type": "integer", "minimum": 100, "maximum": 30000},
             "recheck_target": {"type": "boolean"},
-            "input_texts": {"type": "object", "description": "Provide ALL known literal values required by the task as separate entries on the FIRST delegation. Prepare task-specified form/search criteria before seeing the fields, even if widget types are unknown. Each entry is copied VERBATIM into one focused field; Jev cannot split, extract, rewrite or format it. These are values to enter, not button/checkbox labels to click; use {} for click-only work or no new known text. Revised text needs a new ID.", "additionalProperties": {
+            "input_texts": {"type": "object", "description": "Provide ALL known literal values required by the task as separate entries on the FIRST delegation. Prepare task-specified form/search criteria before seeing the fields, even if widget types are unknown. Each entry is copied verbatim or appended to observed field text with a space; native date/time formatting preserves its value; the runner additionally retains dates read from UI with source labels for date-field entry. Do not pre-resolve a fact the user asks Jev to find. These are values to enter, not button/checkbox labels to click; use {} for click-only work or no new known text. Revised text needs a new ID.", "additionalProperties": {
                 "type": "object", "properties": {"text": {"type": "string", "description": "Exact literal value to insert in one field, without splitting or rewriting"}, "purpose": {"type": "string", "description": "What this entire literal value is for; not instructions to transform it"}},
                 "required": ["text", "purpose"], "additionalProperties": False,
             }},
-            "guidance": {"type": "string", "description": "Your specific reasoning conclusion or task-specific boundary, added to history. Omit generic instructions: Jev already yields for reasoning, missing text and final review."},
+            "guidance": {"type": "string", "description": "Your concrete reasoning conclusion or task-specific interaction boundary, added to history. Resolve comparisons yourself before resuming; do not ask Jev to rank or calculate. Omit generic interaction instructions."},
             "max_steps": {"type": "integer", "minimum": 1},
             "max_seconds": {"type": "number", "exclusiveMinimum": 0},
-            "min_continue_probability": {"type": "number", "minimum": 0, "maximum": 1, "description": "Default 0.9; lower continuation scores yield. Usually omit; not a calibrated guarantee."},
+            "min_continue_probability": {"type": "number", "minimum": 0, "maximum": 1, "description": "Default 0.5; lower continuation scores yield. Usually omit; not a calibrated guarantee."},
             "max_context_bytes": {"type": "integer", "minimum": 1, "description": "Default 100000 request bytes; overflow yields the full UI. Usually omit."},
             "pricing": {"type": "object", "description": "Optional verified USD rates per million Jev tokens; omit for unknown cost", "properties": {"input_tokens": {"type": "number", "minimum": 0}, "output_tokens": {"type": "number", "minimum": 0}}, "required": ["input_tokens", "output_tokens"], "additionalProperties": False},
         },

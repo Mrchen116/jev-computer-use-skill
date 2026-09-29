@@ -1,4 +1,6 @@
 import json
+import io
+from unittest.mock import Mock, patch
 from pathlib import Path
 import sys
 import tempfile
@@ -23,6 +25,24 @@ class RuntimeTests(unittest.TestCase):
             path.write_text(json.dumps({'mcpServers': {'cua_repl': {'command': str(Path(directory)/'missing')}}}))
             with self.assertRaisesRegex(RuntimeError, 'missing'):
                 runtime_configuration(path)
+
+
+class PermissionTests(unittest.TestCase):
+    def test_app_approval_is_process_scoped_and_other_forms_are_not_cached(self):
+        from jev_computer_use.runtime import NativeCUA
+        native = NativeCUA.__new__(NativeCUA)
+        native.permission_handler = None
+        native._app_approvals = set()
+        native.send = Mock()
+        request = {'id': 1, 'params': {'message': 'Allow Computer Use to use "Test"?', 'requestedSchema': {'properties': {}, 'type': 'object'}}}
+        with patch('sys.stdin.isatty', return_value=True), patch('builtins.input', return_value='{}') as answer, patch('sys.stderr', new_callable=io.StringIO):
+            native._elicitation(request)
+            native._elicitation(request)
+            self.assertEqual(answer.call_count, 1)
+            request['params']['message'] = 'Grant a new permission?'
+            native._elicitation(request)
+            native._elicitation(request)
+            self.assertEqual(answer.call_count, 3)
 
 
 if __name__ == '__main__':

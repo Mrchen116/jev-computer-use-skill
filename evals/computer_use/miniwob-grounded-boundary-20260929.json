@@ -1,0 +1,576 @@
+{
+  "protocol": "Hybrid-only, relaxed 300-second MiniWoB subset, official first raw reward must equal 1. No baseline comparison or standard leaderboard claim. Completion without outer UI actions still includes Sol planning, prepared inputs, guidance and final verification. Jev operations count runner actions; outer UI action calls may contain multiple actions, so their ratio is not an action-share percentage.",
+  "upstream_revision": "33c3b4ddef8c6eb67c57a29663d844b1eda7e614",
+  "runs": [
+    {
+      "case": "book-flight",
+      "seed": 11,
+      "arm": "hybrid",
+      "seconds": 82.417780209,
+      "setup_seconds": 12.422551375,
+      "llm_requests": 4,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.7923066666666667,
+        "reason": null,
+        "episode_seconds": 62.308,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Book the shortest one-way flight from: Emmonak, AK to: Steamboat Springs, CO on 11/19/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 9,
+          "input": 2,
+          "keydown": 4
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          9
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 5.14
+      },
+      "jev_action_types": {
+        "replace": 2,
+        "click": 7
+      },
+      "jev_executed_operations": 9,
+      "outer_ui_action_calls": 1,
+      "completion_without_outer_ui_actions": false,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 91872,
+        "cached_input_tokens": 64896,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 577,
+        "reasoning_output_tokens": 97
+      },
+      "jev_usage": {
+        "input_tokens": 88147,
+        "output_tokens": 6778
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "click-checkboxes-large",
+      "seed": 11,
+      "arm": "hybrid",
+      "seconds": 62.231103042,
+      "setup_seconds": 8.02132445800001,
+      "llm_requests": 2,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.8788333333333334,
+        "reason": null,
+        "episode_seconds": 36.35,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Select ZMhn, LU, QMz, hIUXfQq, LEb9SX4, S4, Byrc4nt and click Submit.",
+        "minimum_operations": 6,
+        "observed_ui_events": {
+          "click": 8,
+          "input": 7,
+          "keydown": 2
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          8
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 3.035
+      },
+      "jev_action_types": {
+        "click": 8
+      },
+      "jev_executed_operations": 8,
+      "outer_ui_action_calls": 0,
+      "completion_without_outer_ui_actions": true,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 38233,
+        "cached_input_tokens": 17024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 308,
+        "reasoning_output_tokens": 23
+      },
+      "jev_usage": {
+        "input_tokens": 46742,
+        "output_tokens": 4047
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "multi-layouts",
+      "seed": 11,
+      "arm": "hybrid",
+      "seconds": 63.125886124999965,
+      "setup_seconds": 7.695091208999997,
+      "llm_requests": 3,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.8608,
+        "reason": null,
+        "episode_seconds": 41.761,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Search for drama movies directed by Holloway from year 2011.",
+        "minimum_operations": 4,
+        "observed_ui_events": {
+          "click": 4,
+          "input": 3,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          0
+        ],
+        "outcomes": [
+          "uncertain_action"
+        ],
+        "jev_seconds": 2.218
+      },
+      "jev_action_types": {},
+      "jev_executed_operations": 0,
+      "outer_ui_action_calls": 1,
+      "completion_without_outer_ui_actions": false,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 64181,
+        "cached_input_tokens": 40192,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 594,
+        "reasoning_output_tokens": 171
+      },
+      "jev_usage": {
+        "input_tokens": 16445,
+        "output_tokens": 1255
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "book-flight",
+      "seed": 22,
+      "arm": "hybrid",
+      "seconds": 106.27450241700001,
+      "setup_seconds": 9.951529459000028,
+      "llm_requests": 5,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.6833033333333334,
+        "reason": null,
+        "episode_seconds": 95.009,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Book the shortest one-way flight from: Plattsburgh, NY to: FNL on 12/01/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 11,
+          "input": 2,
+          "keydown": 7
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 2,
+        "actions_per_stage": [
+          9,
+          7
+        ],
+        "outcomes": [
+          "help_reasoning",
+          "review_completion"
+        ],
+        "jev_seconds": 7.915999999999999
+      },
+      "jev_action_types": {
+        "replace": 2,
+        "click": 8,
+        "wait": 3,
+        "view_page": 1,
+        "key": 2
+      },
+      "jev_executed_operations": 16,
+      "outer_ui_action_calls": 1,
+      "completion_without_outer_ui_actions": false,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 133592,
+        "cached_input_tokens": 58496,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1075,
+        "reasoning_output_tokens": 444
+      },
+      "jev_usage": {
+        "input_tokens": 148565,
+        "output_tokens": 11531
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "click-checkboxes-large",
+      "seed": 22,
+      "arm": "hybrid",
+      "seconds": 68.53267549999998,
+      "setup_seconds": 9.680366417000016,
+      "llm_requests": 2,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.8199333333333333,
+        "reason": null,
+        "episode_seconds": 54.02,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Select 8F7cug, DW, 3HK, MC0ZWRz, hP2pD, balppEZ, oI1B, jx4Q6, YT0peP, hv and click Submit.",
+        "minimum_operations": 6,
+        "observed_ui_events": {
+          "click": 11,
+          "input": 10,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          11
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 5.136
+      },
+      "jev_action_types": {
+        "click": 11
+      },
+      "jev_executed_operations": 11,
+      "outer_ui_action_calls": 0,
+      "completion_without_outer_ui_actions": true,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 38946,
+        "cached_input_tokens": 9600,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 371,
+        "reasoning_output_tokens": 44
+      },
+      "jev_usage": {
+        "input_tokens": 68789,
+        "output_tokens": 5635
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "multi-layouts",
+      "seed": 22,
+      "arm": "hybrid",
+      "seconds": 67.89925012500004,
+      "setup_seconds": 11.10674479100004,
+      "llm_requests": 2,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.8381266666666667,
+        "reason": null,
+        "episode_seconds": 48.562,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Search for saga movies directed by Hale from year 1984.",
+        "minimum_operations": 4,
+        "observed_ui_events": {
+          "click": 4,
+          "input": 3,
+          "keydown": 7
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          5
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 3.5060000000000002
+      },
+      "jev_action_types": {
+        "replace": 3,
+        "click": 1,
+        "wait": 1
+      },
+      "jev_executed_operations": 5,
+      "outer_ui_action_calls": 0,
+      "completion_without_outer_ui_actions": true,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 37540,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 345,
+        "reasoning_output_tokens": 34
+      },
+      "jev_usage": {
+        "input_tokens": 44540,
+        "output_tokens": 3670
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "book-flight",
+      "seed": 66,
+      "arm": "hybrid",
+      "seconds": 104.76456000000007,
+      "setup_seconds": 9.577104959000053,
+      "llm_requests": 9,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.6656733333333333,
+        "reason": null,
+        "episode_seconds": 100.298,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Book the shortest one-way flight from: Pasco, WA to: Santa Ana, CA on 10/22/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 16,
+          "input": 24,
+          "keydown": 33
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          12
+        ],
+        "outcomes": [
+          "help_reasoning"
+        ],
+        "jev_seconds": 6.470999999999998
+      },
+      "jev_action_types": {
+        "replace": 2,
+        "click": 5,
+        "view_page": 1,
+        "wait": 4
+      },
+      "jev_executed_operations": 12,
+      "outer_ui_action_calls": 6,
+      "completion_without_outer_ui_actions": false,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 245784,
+        "cached_input_tokens": 222208,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1097,
+        "reasoning_output_tokens": 337
+      },
+      "jev_usage": {
+        "input_tokens": 136341,
+        "output_tokens": 10803
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "click-checkboxes-large",
+      "seed": 66,
+      "arm": "hybrid",
+      "seconds": 67.43612091699993,
+      "setup_seconds": 12.232003833000022,
+      "llm_requests": 2,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.82695,
+        "reason": null,
+        "episode_seconds": 51.915,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Select pgDHBa, lsvS7i, 0koY, BYnzH, kNcHh, jW, tszSRE1, OpmpMgp, xH0bn, KilnY and click Submit.",
+        "minimum_operations": 6,
+        "observed_ui_events": {
+          "click": 11,
+          "input": 10,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          11
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 5.331000000000001
+      },
+      "jev_action_types": {
+        "click": 11
+      },
+      "jev_executed_operations": 11,
+      "outer_ui_action_calls": 0,
+      "completion_without_outer_ui_actions": true,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 39233,
+        "cached_input_tokens": 17024,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 325,
+        "reasoning_output_tokens": 31
+      },
+      "jev_usage": {
+        "input_tokens": 67711,
+        "output_tokens": 5513
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "multi-layouts",
+      "seed": 66,
+      "arm": "hybrid",
+      "seconds": 65.65936829199995,
+      "setup_seconds": 9.66977754200002,
+      "llm_requests": 2,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.8531366666666667,
+        "reason": null,
+        "episode_seconds": 44.059,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Search for saga movies directed by Clay from year 2009.",
+        "minimum_operations": 4,
+        "observed_ui_events": {
+          "click": 4,
+          "input": 3,
+          "keydown": 7
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          5
+        ],
+        "outcomes": [
+          "review_completion"
+        ],
+        "jev_seconds": 4.716000000000001
+      },
+      "jev_action_types": {
+        "replace": 3,
+        "click": 1,
+        "wait": 1
+      },
+      "jev_executed_operations": 5,
+      "outer_ui_action_calls": 0,
+      "completion_without_outer_ui_actions": true,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 37676,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 338,
+        "reasoning_output_tokens": 35
+      },
+      "jev_usage": {
+        "input_tokens": 44622,
+        "output_tokens": 3670
+      },
+      "unmetered_jev_calls": 0
+    }
+  ],
+  "summary": {
+    "runs": 9,
+    "completed": 9,
+    "seconds": 688.3412466269999,
+    "jev_executed_operations": 77,
+    "outer_ui_action_calls": 9,
+    "completion_without_outer_ui_actions": 5
+  },
+  "telemetry_verified": true
+}

@@ -1,0 +1,91 @@
+{
+  "protocol": "Interrupted development batch, not final acceptance. Calendar and autocomplete reached flight results; missing explicit host-comparison boundary allowed an incorrect booking. First raw reward retained.",
+  "runs": [
+    {
+      "case": "click-checkboxes-large",
+      "seed": 11,
+      "seconds": 28.107912999999996,
+      "interrupted": true,
+      "timed_out": false,
+      "judge": {
+        "success": false,
+        "checks": {
+          "official_raw_reward_one": false,
+          "single_episode": false
+        },
+        "raw_reward": null,
+        "time_scaled_reward": null,
+        "reason": null,
+        "episode_seconds": null,
+        "episodes_started": 1,
+        "episodes_finished": 0,
+        "query": "Select ZMhn, LU, QMz, hIUXfQq, LEb9SX4, S4, Byrc4nt and click Submit.",
+        "minimum_operations": 6,
+        "observed_ui_events": {
+          "click": 0,
+          "input": 0,
+          "keydown": 0
+        },
+        "reaction_seconds": []
+      }
+    },
+    {
+      "case": "book-flight",
+      "seed": 11,
+      "seconds": 92.590917708,
+      "interrupted": false,
+      "timed_out": false,
+      "judge": {
+        "success": false,
+        "checks": {
+          "official_raw_reward_one": false,
+          "single_episode": true
+        },
+        "raw_reward": -1,
+        "time_scaled_reward": -1,
+        "reason": null,
+        "episode_seconds": 56.093,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Book the shortest one-way flight from: Emmonak, AK to: Steamboat Springs, CO on 11/19/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 9,
+          "input": 2,
+          "keydown": 4
+        },
+        "reaction_seconds": []
+      }
+    }
+  ],
+  "unrun": [
+    {
+      "case": "multi-layouts",
+      "seed": 11
+    },
+    {
+      "case": "book-flight",
+      "seed": 22
+    },
+    {
+      "case": "click-checkboxes-large",
+      "seed": 22
+    },
+    {
+      "case": "multi-layouts",
+      "seed": 22
+    },
+    {
+      "case": "book-flight",
+      "seed": 66
+    },
+    {
+      "case": "click-checkboxes-large",
+      "seed": 66
+    },
+    {
+      "case": "multi-layouts",
+      "seed": 66
+    }
+  ]
+}

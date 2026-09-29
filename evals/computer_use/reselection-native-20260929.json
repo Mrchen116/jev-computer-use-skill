@@ -1,0 +1,165 @@
+{
+  "date": "2026-09-29",
+  "runs": [
+    {
+      "run": "jev-flights-stability-saz6orhr/1",
+      "reason": "review_completion",
+      "seconds": 42.285,
+      "api_calls": 21,
+      "api_phases": {
+        "operation_target": 17,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 318833,
+        "output_tokens": 27332
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": true
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-saz6orhr/2",
+      "reason": "review_completion",
+      "seconds": 39.598,
+      "api_calls": 22,
+      "api_phases": {
+        "operation_target": 18,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 340570,
+        "output_tokens": 29252
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-saz6orhr/3",
+      "reason": "review_completion",
+      "seconds": 43.867,
+      "api_calls": 23,
+      "api_phases": {
+        "operation_target": 19,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 369490,
+        "output_tokens": 31611
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 7,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-doubao-reselection-10xswgmb/.",
+      "reason": "review_completion",
+      "seconds": 19.309,
+      "api_calls": 11,
+      "api_phases": {
+        "operation_target": 9,
+        "input_value": 2
+      },
+      "usage": {
+        "input_tokens": 159103,
+        "output_tokens": 14390
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 3,
+        "replace": 2,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": null,
+      "doubao_reply": "Not present in final captured observation; not required by the send-only task.",
+      "doubao_message_sent": true,
+      "doubao_editor_empty": true
+    }
+  ],
+  "notes": [
+    "Private raw native/model traces are intentionally excluded.",
+    "Runs on already-filled or existing-result pages are not counted as end-to-end navigation passes.",
+    "Elapsed values are runner active wall time, excluding outer fixture setup and final independent verification."
+  ],
+  "runtime_sha256": {
+    "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "78e1d0f2f44cadbe02f91649a5d6b520061fc85c8a7c115e81ab94cda94bc51c",
+    "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+    "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+    "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+    "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "9c5b44afaac41c2a4b75a27404395cae96b796549926ddb56f1d43be994a846b",
+    "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+    "skills/jev-computer-use/scripts/jev_computer_use/decisions.py": "f8c84bf435aebc2e693965f815fdd148be0715a6da0d9ebc968dff8d6ec9333c",
+    "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "448615c2204dec0c244fb29348e0bb90ac11f950d8e0601ccbcde9916437c839",
+    "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "4a1f9e42b0704dfe11545a19ec034c76ad6360c8bc8ad8a7863c9ca6b3b5c54e",
+    "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "6f25ab90bb2f3ec2b18575374ffe5b7a171af03bfee4ec2eeb94f33b40f5185e",
+    "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+    "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+    "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "6bead55dcd64843c737cdee64a706c85e5bd95a459c268d1df1a4f6907e35414",
+    "skills/jev-computer-use/scripts/jev_computer_use/models.py": "61e342b2fa242c8dd8c756d4341a9e3b38238d0037ff777f4f16dd8dcee57a74",
+    "skills/jev-computer-use/scripts/jev_computer_use/observations.py": "4a197332e4c12c2a60be5c7fef4ad71badd583d2917073d71dfc99920d49a97a",
+    "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "14d6ca14c3f2529a25cd36829a87d4ade6fe47f4ca27ae53bf79fb47c3bfe970",
+    "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+    "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+    "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+    "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+    "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+    "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "627bcfacc2c0f7f4750a047eb0d9a4f0eb118636b945e2ac4e65b90cd913015e",
+    "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "a4ddfca9a9f9f7712b2045ca6586fee09f3836aef9d84b7b494f7b02d8ad136a"
+  }
+}

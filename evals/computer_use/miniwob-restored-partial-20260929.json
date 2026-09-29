@@ -1,0 +1,626 @@
+{
+  "notes": [
+    "Development batches interrupted to fix observed defects; incomplete or unrun episodes are not passes.",
+    "A retained official reward remains visible even if the surrounding helper was interrupted afterward."
+  ],
+  "batches": [
+    {
+      "batch": "jev-miniwob-restored-20260929",
+      "runs": [
+        {
+          "case": "book-flight",
+          "seed": 11,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 11,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 11,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "book-flight",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "book-flight",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        }
+      ],
+      "source_sha256": {
+        "evals/computer_use/compare_miniwob.py": "9d4c1813650582dbf5e75548c9ff16635f4aa0a51c3b0a474db91fbbe2fde7d2",
+        "evals/computer_use/compare_reused.py": "58921e220ca93e342cb7e3cd3c1cc7f4a5cd8c31ba54fa0870da201912dbeec1",
+        "evals/computer_use/fixtures.py": "f6de4034e08288ece694da3b03e998edd2871bf916ae4a3d8c87a960c0a788bc",
+        "evals/computer_use/live_cases.py": "3c8b686c87ed58989c59dada907b12b4b2bdf3afda7197a091bbcd2b21b9faa6",
+        "evals/computer_use/miniwob_cases.py": "d38e0d8b1fd67541dc5e7f87bed09e22019b0f76206a366b57a895a74b4e0cbd",
+        "evals/computer_use/miniwob_report.py": "220b16a564f5eccd76adecbab55be495dc117b934e38cce58bd7ba6273075149",
+        "evals/computer_use/report.py": "c2f22b9ed4d9a2b6bf61797bf91cab68a12bae733e1b768acd66897fb4227ca5",
+        "evals/computer_use/run.py": "5d60f899b41ac6f8bfa5fae6c7242bfe4d4d8fa1e88558386c1c5b23d2d87507",
+        "evals/computer_use/test_compare_miniwob.py": "fea083e4698cac615a29992a6f1b966b109404bff4b7b959ec29c3558e465693",
+        "evals/computer_use/test_fixtures.py": "19e4fadf2fe97ad70a24268f1b9538da38428b987ca7a55e42a209e03ceb72dc",
+        "evals/computer_use/test_live.py": "2257ad70c575d1d206ce375dfba7ba549568374219ba5303eaa2346c2d9c03a5",
+        "evals/computer_use/test_miniwob.py": "9e49098cc8ddc1c2560dbc878cc40e9eb17bf9e98ae0250db6ac15e632d7e374",
+        "evals/computer_use/test_report.py": "4c5b7c5c295a78bf689e277701c30394ab6fbe48ab048f03564e7bc266b244a6",
+        "skills/jev-computer-use/SKILL.md": "f63b66907b86329a6ca49f372eee17e83368646a352cfb1240be6c6e05a3ea8c",
+        "skills/jev-computer-use/references/stages.md": "ea28403c9425973daf33affef92f2dfde0339076e459dec8d5c1fd69fe6beb68",
+        "skills/jev-computer-use/references/tasks.md": "813296df945a55da8c7e5fc0f2bac0628f58014267c7c6dcf72c73b115404e93",
+        "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "78e1d0f2f44cadbe02f91649a5d6b520061fc85c8a7c115e81ab94cda94bc51c",
+        "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+        "skills/jev-computer-use/scripts/jev_computer_use/calendar_view.py": "b901f02f0f13ea1aab19bebde2bd74f08773ccb6ae35b7689741a52a8da3cbd9",
+        "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+        "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+        "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "22a5f0b27e5527390e030885f268c919e6f097876be2ada24c6e2bdabc3b81f3",
+        "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+        "skills/jev-computer-use/scripts/jev_computer_use/decisions.py": "3b2a6e7040ca8bc3f52547b92c1199ae916c5f6644786c1c360a411492973c46",
+        "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "8f321d1479035f652698b0b976a1f5c30331f3b8ffccc3bf91b706fba1059066",
+        "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "4a1f9e42b0704dfe11545a19ec034c76ad6360c8bc8ad8a7863c9ca6b3b5c54e",
+        "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "6f25ab90bb2f3ec2b18575374ffe5b7a171af03bfee4ec2eeb94f33b40f5185e",
+        "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+        "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+        "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "6bead55dcd64843c737cdee64a706c85e5bd95a459c268d1df1a4f6907e35414",
+        "skills/jev-computer-use/scripts/jev_computer_use/models.py": "61e342b2fa242c8dd8c756d4341a9e3b38238d0037ff777f4f16dd8dcee57a74",
+        "skills/jev-computer-use/scripts/jev_computer_use/observations.py": "4a197332e4c12c2a60be5c7fef4ad71badd583d2917073d71dfc99920d49a97a",
+        "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "14d6ca14c3f2529a25cd36829a87d4ade6fe47f4ca27ae53bf79fb47c3bfe970",
+        "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+        "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+        "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+        "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+        "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+        "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "627bcfacc2c0f7f4750a047eb0d9a4f0eb118636b945e2ac4e65b90cd913015e",
+        "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "a4ddfca9a9f9f7712b2045ca6586fee09f3836aef9d84b7b494f7b02d8ad136a"
+      }
+    },
+    {
+      "batch": "jev-miniwob-context-final-20260929",
+      "runs": [
+        {
+          "case": "book-flight",
+          "seed": 11,
+          "seconds": 0.7783708750000002,
+          "interrupted": true,
+          "judge": {
+            "success": false,
+            "checks": {
+              "official_raw_reward_one": false,
+              "single_episode": false
+            },
+            "raw_reward": null,
+            "time_scaled_reward": null,
+            "reason": null,
+            "episode_seconds": null,
+            "episodes_started": 1,
+            "episodes_finished": 0,
+            "query": "Book the shortest one-way flight from: Emmonak, AK to: Steamboat Springs, CO on 11/19/2016.",
+            "minimum_operations": 5,
+            "observed_ui_events": {
+              "click": 0,
+              "input": 0,
+              "keydown": 0
+            },
+            "reaction_seconds": []
+          },
+          "delegation": {
+            "stages": 0,
+            "actions_per_stage": [],
+            "outcomes": [],
+            "jev_seconds": 0
+          }
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 11,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 11,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "book-flight",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "book-flight",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        }
+      ],
+      "source_sha256": {
+        "evals/computer_use/compare_miniwob.py": "9d4c1813650582dbf5e75548c9ff16635f4aa0a51c3b0a474db91fbbe2fde7d2",
+        "evals/computer_use/compare_reused.py": "58921e220ca93e342cb7e3cd3c1cc7f4a5cd8c31ba54fa0870da201912dbeec1",
+        "evals/computer_use/fixtures.py": "f6de4034e08288ece694da3b03e998edd2871bf916ae4a3d8c87a960c0a788bc",
+        "evals/computer_use/live_cases.py": "3c8b686c87ed58989c59dada907b12b4b2bdf3afda7197a091bbcd2b21b9faa6",
+        "evals/computer_use/miniwob_cases.py": "d38e0d8b1fd67541dc5e7f87bed09e22019b0f76206a366b57a895a74b4e0cbd",
+        "evals/computer_use/miniwob_report.py": "220b16a564f5eccd76adecbab55be495dc117b934e38cce58bd7ba6273075149",
+        "evals/computer_use/report.py": "c2f22b9ed4d9a2b6bf61797bf91cab68a12bae733e1b768acd66897fb4227ca5",
+        "evals/computer_use/run.py": "5d60f899b41ac6f8bfa5fae6c7242bfe4d4d8fa1e88558386c1c5b23d2d87507",
+        "evals/computer_use/test_compare_miniwob.py": "fea083e4698cac615a29992a6f1b966b109404bff4b7b959ec29c3558e465693",
+        "evals/computer_use/test_fixtures.py": "19e4fadf2fe97ad70a24268f1b9538da38428b987ca7a55e42a209e03ceb72dc",
+        "evals/computer_use/test_live.py": "2257ad70c575d1d206ce375dfba7ba549568374219ba5303eaa2346c2d9c03a5",
+        "evals/computer_use/test_miniwob.py": "9e49098cc8ddc1c2560dbc878cc40e9eb17bf9e98ae0250db6ac15e632d7e374",
+        "evals/computer_use/test_report.py": "4c5b7c5c295a78bf689e277701c30394ab6fbe48ab048f03564e7bc266b244a6",
+        "skills/jev-computer-use/SKILL.md": "f63b66907b86329a6ca49f372eee17e83368646a352cfb1240be6c6e05a3ea8c",
+        "skills/jev-computer-use/references/stages.md": "ea28403c9425973daf33affef92f2dfde0339076e459dec8d5c1fd69fe6beb68",
+        "skills/jev-computer-use/references/tasks.md": "813296df945a55da8c7e5fc0f2bac0628f58014267c7c6dcf72c73b115404e93",
+        "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "78e1d0f2f44cadbe02f91649a5d6b520061fc85c8a7c115e81ab94cda94bc51c",
+        "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+        "skills/jev-computer-use/scripts/jev_computer_use/calendar_view.py": "b901f02f0f13ea1aab19bebde2bd74f08773ccb6ae35b7689741a52a8da3cbd9",
+        "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+        "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+        "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "320fdd85d67b686fb517fe7f4330b7f9d5de9a69d4e13f065d18af5fdba62900",
+        "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+        "skills/jev-computer-use/scripts/jev_computer_use/decisions.py": "3b2a6e7040ca8bc3f52547b92c1199ae916c5f6644786c1c360a411492973c46",
+        "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "8f321d1479035f652698b0b976a1f5c30331f3b8ffccc3bf91b706fba1059066",
+        "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "4a1f9e42b0704dfe11545a19ec034c76ad6360c8bc8ad8a7863c9ca6b3b5c54e",
+        "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "6f25ab90bb2f3ec2b18575374ffe5b7a171af03bfee4ec2eeb94f33b40f5185e",
+        "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+        "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+        "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "6bead55dcd64843c737cdee64a706c85e5bd95a459c268d1df1a4f6907e35414",
+        "skills/jev-computer-use/scripts/jev_computer_use/models.py": "61e342b2fa242c8dd8c756d4341a9e3b38238d0037ff777f4f16dd8dcee57a74",
+        "skills/jev-computer-use/scripts/jev_computer_use/observations.py": "4a197332e4c12c2a60be5c7fef4ad71badd583d2917073d71dfc99920d49a97a",
+        "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "14d6ca14c3f2529a25cd36829a87d4ade6fe47f4ca27ae53bf79fb47c3bfe970",
+        "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+        "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+        "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+        "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+        "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+        "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "19ba3c7379d2982c90d30b03fbc602f46f0ed42bd168c885868a41d63ca092d3",
+        "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "a4ddfca9a9f9f7712b2045ca6586fee09f3836aef9d84b7b494f7b02d8ad136a"
+      }
+    },
+    {
+      "batch": "jev-miniwob-context-verified-20260929",
+      "runs": [
+        {
+          "case": "book-flight",
+          "seed": 11,
+          "seconds": 76.67526624999999,
+          "interrupted": false,
+          "judge": {
+            "success": true,
+            "checks": {
+              "official_raw_reward_one": true,
+              "single_episode": true
+            },
+            "raw_reward": 1,
+            "time_scaled_reward": 0.7572,
+            "reason": null,
+            "episode_seconds": 72.841,
+            "episodes_started": 1,
+            "episodes_finished": 1,
+            "query": "Book the shortest one-way flight from: Emmonak, AK to: Steamboat Springs, CO on 11/19/2016.",
+            "minimum_operations": 5,
+            "observed_ui_events": {
+              "click": 13,
+              "input": 32,
+              "keydown": 57
+            },
+            "reaction_seconds": []
+          },
+          "delegation": {
+            "stages": 1,
+            "actions_per_stage": [
+              0
+            ],
+            "outcomes": [
+              "uncertain_action"
+            ],
+            "jev_seconds": 1.6280000000000001
+          }
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 11,
+          "seconds": 36.72025574999999,
+          "interrupted": false,
+          "judge": {
+            "success": true,
+            "checks": {
+              "official_raw_reward_one": true,
+              "single_episode": true
+            },
+            "raw_reward": 1,
+            "time_scaled_reward": 0.90183,
+            "reason": null,
+            "episode_seconds": 29.452,
+            "episodes_started": 1,
+            "episodes_finished": 1,
+            "query": "Select ZMhn, LU, QMz, hIUXfQq, LEb9SX4, S4, Byrc4nt and click Submit.",
+            "minimum_operations": 6,
+            "observed_ui_events": {
+              "click": 8,
+              "input": 7,
+              "keydown": 0
+            },
+            "reaction_seconds": []
+          },
+          "delegation": {
+            "stages": 1,
+            "actions_per_stage": [
+              8
+            ],
+            "outcomes": [
+              "review_completion"
+            ],
+            "jev_seconds": 2.904
+          }
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 11,
+          "seconds": 30.752534959000002,
+          "interrupted": true,
+          "judge": {
+            "success": false,
+            "checks": {
+              "official_raw_reward_one": false,
+              "single_episode": false
+            },
+            "raw_reward": null,
+            "time_scaled_reward": null,
+            "reason": null,
+            "episode_seconds": null,
+            "episodes_started": 1,
+            "episodes_finished": 0,
+            "query": "Search for drama movies directed by Holloway from year 2011.",
+            "minimum_operations": 4,
+            "observed_ui_events": {
+              "click": 0,
+              "input": 0,
+              "keydown": 0
+            },
+            "reaction_seconds": []
+          },
+          "delegation": {
+            "stages": 0,
+            "actions_per_stage": [],
+            "outcomes": [],
+            "jev_seconds": 0
+          }
+        },
+        {
+          "case": "book-flight",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "book-flight",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        }
+      ],
+      "source_sha256": {
+        "evals/computer_use/compare_miniwob.py": "9d4c1813650582dbf5e75548c9ff16635f4aa0a51c3b0a474db91fbbe2fde7d2",
+        "evals/computer_use/compare_reused.py": "58921e220ca93e342cb7e3cd3c1cc7f4a5cd8c31ba54fa0870da201912dbeec1",
+        "evals/computer_use/fixtures.py": "f6de4034e08288ece694da3b03e998edd2871bf916ae4a3d8c87a960c0a788bc",
+        "evals/computer_use/live_cases.py": "3c8b686c87ed58989c59dada907b12b4b2bdf3afda7197a091bbcd2b21b9faa6",
+        "evals/computer_use/miniwob_cases.py": "d38e0d8b1fd67541dc5e7f87bed09e22019b0f76206a366b57a895a74b4e0cbd",
+        "evals/computer_use/miniwob_report.py": "220b16a564f5eccd76adecbab55be495dc117b934e38cce58bd7ba6273075149",
+        "evals/computer_use/report.py": "c2f22b9ed4d9a2b6bf61797bf91cab68a12bae733e1b768acd66897fb4227ca5",
+        "evals/computer_use/run.py": "5d60f899b41ac6f8bfa5fae6c7242bfe4d4d8fa1e88558386c1c5b23d2d87507",
+        "evals/computer_use/test_compare_miniwob.py": "fea083e4698cac615a29992a6f1b966b109404bff4b7b959ec29c3558e465693",
+        "evals/computer_use/test_fixtures.py": "19e4fadf2fe97ad70a24268f1b9538da38428b987ca7a55e42a209e03ceb72dc",
+        "evals/computer_use/test_live.py": "2257ad70c575d1d206ce375dfba7ba549568374219ba5303eaa2346c2d9c03a5",
+        "evals/computer_use/test_miniwob.py": "9e49098cc8ddc1c2560dbc878cc40e9eb17bf9e98ae0250db6ac15e632d7e374",
+        "evals/computer_use/test_report.py": "4c5b7c5c295a78bf689e277701c30394ab6fbe48ab048f03564e7bc266b244a6",
+        "skills/jev-computer-use/SKILL.md": "f63b66907b86329a6ca49f372eee17e83368646a352cfb1240be6c6e05a3ea8c",
+        "skills/jev-computer-use/references/stages.md": "ea28403c9425973daf33affef92f2dfde0339076e459dec8d5c1fd69fe6beb68",
+        "skills/jev-computer-use/references/tasks.md": "813296df945a55da8c7e5fc0f2bac0628f58014267c7c6dcf72c73b115404e93",
+        "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "78e1d0f2f44cadbe02f91649a5d6b520061fc85c8a7c115e81ab94cda94bc51c",
+        "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+        "skills/jev-computer-use/scripts/jev_computer_use/calendar_view.py": "b901f02f0f13ea1aab19bebde2bd74f08773ccb6ae35b7689741a52a8da3cbd9",
+        "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+        "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+        "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "80f5edc823b43d78581c455d0c8459af22f0a49205e692f3a1d6f70763e3c040",
+        "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+        "skills/jev-computer-use/scripts/jev_computer_use/decisions.py": "3b2a6e7040ca8bc3f52547b92c1199ae916c5f6644786c1c360a411492973c46",
+        "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "8f321d1479035f652698b0b976a1f5c30331f3b8ffccc3bf91b706fba1059066",
+        "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "4a1f9e42b0704dfe11545a19ec034c76ad6360c8bc8ad8a7863c9ca6b3b5c54e",
+        "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "6f25ab90bb2f3ec2b18575374ffe5b7a171af03bfee4ec2eeb94f33b40f5185e",
+        "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+        "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+        "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "6bead55dcd64843c737cdee64a706c85e5bd95a459c268d1df1a4f6907e35414",
+        "skills/jev-computer-use/scripts/jev_computer_use/models.py": "61e342b2fa242c8dd8c756d4341a9e3b38238d0037ff777f4f16dd8dcee57a74",
+        "skills/jev-computer-use/scripts/jev_computer_use/observations.py": "4a197332e4c12c2a60be5c7fef4ad71badd583d2917073d71dfc99920d49a97a",
+        "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "14d6ca14c3f2529a25cd36829a87d4ade6fe47f4ca27ae53bf79fb47c3bfe970",
+        "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+        "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+        "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+        "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+        "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+        "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "19ba3c7379d2982c90d30b03fbc602f46f0ed42bd168c885868a41d63ca092d3",
+        "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "a4ddfca9a9f9f7712b2045ca6586fee09f3836aef9d84b7b494f7b02d8ad136a"
+      }
+    },
+    {
+      "batch": "jev-miniwob-coherent-20260929",
+      "runs": [
+        {
+          "case": "book-flight",
+          "seed": 11,
+          "seconds": 53.501970375000006,
+          "interrupted": false,
+          "judge": {
+            "success": true,
+            "checks": {
+              "official_raw_reward_one": true,
+              "single_episode": true
+            },
+            "raw_reward": 1,
+            "time_scaled_reward": 0.8372466666666667,
+            "reason": null,
+            "episode_seconds": 48.826,
+            "episodes_started": 1,
+            "episodes_finished": 1,
+            "query": "Book the shortest one-way flight from: Emmonak, AK to: Steamboat Springs, CO on 11/19/2016.",
+            "minimum_operations": 5,
+            "observed_ui_events": {
+              "click": 9,
+              "input": 2,
+              "keydown": 4
+            },
+            "reaction_seconds": []
+          },
+          "delegation": {
+            "stages": 1,
+            "actions_per_stage": [
+              8
+            ],
+            "outcomes": [
+              "review_completion"
+            ],
+            "jev_seconds": 5.141
+          }
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 11,
+          "seconds": 40.41504120799999,
+          "interrupted": false,
+          "judge": {
+            "success": true,
+            "checks": {
+              "official_raw_reward_one": true,
+              "single_episode": true
+            },
+            "raw_reward": 1,
+            "time_scaled_reward": 0.87861,
+            "reason": null,
+            "episode_seconds": 36.418,
+            "episodes_started": 1,
+            "episodes_finished": 1,
+            "query": "Select ZMhn, LU, QMz, hIUXfQq, LEb9SX4, S4, Byrc4nt and click Submit.",
+            "minimum_operations": 6,
+            "observed_ui_events": {
+              "click": 8,
+              "input": 7,
+              "keydown": 1
+            },
+            "reaction_seconds": []
+          },
+          "delegation": {
+            "stages": 1,
+            "actions_per_stage": [
+              8
+            ],
+            "outcomes": [
+              "review_completion"
+            ],
+            "jev_seconds": 3.5080000000000005
+          }
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 11,
+          "seconds": 78.24720520900001,
+          "interrupted": false,
+          "judge": {
+            "success": true,
+            "checks": {
+              "official_raw_reward_one": true,
+              "single_episode": true
+            },
+            "raw_reward": 1,
+            "time_scaled_reward": 0.7546033333333333,
+            "reason": null,
+            "episode_seconds": 73.619,
+            "episodes_started": 1,
+            "episodes_finished": 1,
+            "query": "Search for drama movies directed by Holloway from year 2011.",
+            "minimum_operations": 4,
+            "observed_ui_events": {
+              "click": 4,
+              "input": 3,
+              "keydown": 0
+            },
+            "reaction_seconds": []
+          },
+          "delegation": {
+            "stages": 1,
+            "actions_per_stage": [
+              0
+            ],
+            "outcomes": [
+              "step_budget"
+            ],
+            "jev_seconds": 29.06699999999999
+          }
+        },
+        {
+          "case": "book-flight",
+          "seed": 22,
+          "seconds": 46.50430316699996,
+          "interrupted": true,
+          "judge": {
+            "success": true,
+            "checks": {
+              "official_raw_reward_one": true,
+              "single_episode": true
+            },
+            "raw_reward": 1,
+            "time_scaled_reward": 0.8405966666666667,
+            "reason": null,
+            "episode_seconds": 47.821,
+            "episodes_started": 1,
+            "episodes_finished": 1,
+            "query": "Book the shortest one-way flight from: Plattsburgh, NY to: FNL on 12/01/2016.",
+            "minimum_operations": 5,
+            "observed_ui_events": {
+              "click": 8,
+              "input": 2,
+              "keydown": 4
+            },
+            "reaction_seconds": []
+          },
+          "delegation": {
+            "stages": 2,
+            "actions_per_stage": [
+              7,
+              0
+            ],
+            "outcomes": [
+              "review_completion",
+              "review_completion"
+            ],
+            "jev_seconds": 4.795
+          }
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 22,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "book-flight",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "click-checkboxes-large",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        },
+        {
+          "case": "multi-layouts",
+          "seed": 66,
+          "status": "not_started_or_setup_only"
+        }
+      ],
+      "source_sha256": {
+        "evals/computer_use/compare_miniwob.py": "9d4c1813650582dbf5e75548c9ff16635f4aa0a51c3b0a474db91fbbe2fde7d2",
+        "evals/computer_use/compare_reused.py": "58921e220ca93e342cb7e3cd3c1cc7f4a5cd8c31ba54fa0870da201912dbeec1",
+        "evals/computer_use/fixtures.py": "f6de4034e08288ece694da3b03e998edd2871bf916ae4a3d8c87a960c0a788bc",
+        "evals/computer_use/live_cases.py": "3c8b686c87ed58989c59dada907b12b4b2bdf3afda7197a091bbcd2b21b9faa6",
+        "evals/computer_use/miniwob_cases.py": "d38e0d8b1fd67541dc5e7f87bed09e22019b0f76206a366b57a895a74b4e0cbd",
+        "evals/computer_use/miniwob_report.py": "220b16a564f5eccd76adecbab55be495dc117b934e38cce58bd7ba6273075149",
+        "evals/computer_use/report.py": "c2f22b9ed4d9a2b6bf61797bf91cab68a12bae733e1b768acd66897fb4227ca5",
+        "evals/computer_use/run.py": "5d60f899b41ac6f8bfa5fae6c7242bfe4d4d8fa1e88558386c1c5b23d2d87507",
+        "evals/computer_use/test_compare_miniwob.py": "fea083e4698cac615a29992a6f1b966b109404bff4b7b959ec29c3558e465693",
+        "evals/computer_use/test_fixtures.py": "19e4fadf2fe97ad70a24268f1b9538da38428b987ca7a55e42a209e03ceb72dc",
+        "evals/computer_use/test_live.py": "2257ad70c575d1d206ce375dfba7ba549568374219ba5303eaa2346c2d9c03a5",
+        "evals/computer_use/test_miniwob.py": "9e49098cc8ddc1c2560dbc878cc40e9eb17bf9e98ae0250db6ac15e632d7e374",
+        "evals/computer_use/test_report.py": "4c5b7c5c295a78bf689e277701c30394ab6fbe48ab048f03564e7bc266b244a6",
+        "skills/jev-computer-use/SKILL.md": "f63b66907b86329a6ca49f372eee17e83368646a352cfb1240be6c6e05a3ea8c",
+        "skills/jev-computer-use/references/stages.md": "ea28403c9425973daf33affef92f2dfde0339076e459dec8d5c1fd69fe6beb68",
+        "skills/jev-computer-use/references/tasks.md": "01c2264e75cd9b747445bbb39f7337c04caa2477d74d8ebf4994cfd77f6c718d",
+        "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "78e1d0f2f44cadbe02f91649a5d6b520061fc85c8a7c115e81ab94cda94bc51c",
+        "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+        "skills/jev-computer-use/scripts/jev_computer_use/calendar_view.py": "b901f02f0f13ea1aab19bebde2bd74f08773ccb6ae35b7689741a52a8da3cbd9",
+        "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+        "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+        "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "80f5edc823b43d78581c455d0c8459af22f0a49205e692f3a1d6f70763e3c040",
+        "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+        "skills/jev-computer-use/scripts/jev_computer_use/decisions.py": "fff66b0f1beeac6ce108c6ab41a80816038172dc87502e7b75e01ec899bf6948",
+        "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "8f321d1479035f652698b0b976a1f5c30331f3b8ffccc3bf91b706fba1059066",
+        "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "4a1f9e42b0704dfe11545a19ec034c76ad6360c8bc8ad8a7863c9ca6b3b5c54e",
+        "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "6f25ab90bb2f3ec2b18575374ffe5b7a171af03bfee4ec2eeb94f33b40f5185e",
+        "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+        "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+        "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "6bead55dcd64843c737cdee64a706c85e5bd95a459c268d1df1a4f6907e35414",
+        "skills/jev-computer-use/scripts/jev_computer_use/models.py": "61e342b2fa242c8dd8c756d4341a9e3b38238d0037ff777f4f16dd8dcee57a74",
+        "skills/jev-computer-use/scripts/jev_computer_use/observations.py": "4a197332e4c12c2a60be5c7fef4ad71badd583d2917073d71dfc99920d49a97a",
+        "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "14d6ca14c3f2529a25cd36829a87d4ade6fe47f4ca27ae53bf79fb47c3bfe970",
+        "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+        "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+        "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+        "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+        "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+        "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "19ba3c7379d2982c90d30b03fbc602f46f0ed42bd168c885868a41d63ca092d3",
+        "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "a4ddfca9a9f9f7712b2045ca6586fee09f3836aef9d84b7b494f7b02d8ad136a"
+      }
+    }
+  ]
+}

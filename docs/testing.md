@@ -1,6 +1,44 @@
 # Current general task protocol
 
-The default Skill/CLI/MCP route now uses tasks.py and computer.py. Tests in tests/test_tasks.py cover full history and AX context, focused prepared inputs, separate submission, host input/reasoning resumption, cross-app state, progress/log detail, cooperative stop, optional target rechecking, capacity handoff and uncertain mutation without replay. These protocol tests do not establish Jev task success rates.
+Latest follow-up: [field grounding, calendar/list semantics, and native acceptance](../evals/computer_use/GROUNDED-ACTIONS-20260929.md). The final MiniWoB matrix passed nine first episodes: booking navigation was autonomous, with host ranking/final booking and one legitimate missing-text handoff. Earlier failures and interrupted runs remain recorded.
+
+Earlier: [input-branch rejection and unresolved calendar handoff](../evals/computer_use/RESELECTION-20260929.md).
+
+Previous: [2026-09-29 native general-task repair and acceptance](../evals/computer_use/GENERALIZATION-20260929.md), including retained failures and end-to-end Flights/Doubao evidence.
+
+See the [native desktop generalization follow-up](desktop-generalization.md) for Doubao/Calendar acceptance, shared capability changes, and an explicitly failed cross-year variant.
+
+The default Skill/CLI/MCP route uses tasks.py, decisions.py and computer.py. Tests in tests/test_tasks.py cover full history and AX context, focused prepared inputs, separate submission, host input/reasoning resumption, cross-app state, progress/log detail, cooperative stop, optional target rechecking, capacity handoff and uncertain mutation without replay. These protocol tests do not establish Jev task success rates.
+
+The factored decision protocol is covered by `tests/test_decisions.py`: separate
+operation/target heads, only the selected branch consumed, per-field exact-value
+selection with a missing-text option, pause/stop before a follow-up model call,
+and native date/time compatibility. A 12-field/16-value fixture exposes 12 input
+targets followed by 16 values plus handoff, instead of 192 concrete input choices.
+The executor retains concrete actions internally for identity checks. The complete
+30-step fixture history is preserved. Task-loop tests also cover target lists over
+255 choices without silent truncation. This changes the decision protocol, not the
+observation parser or history retention policy.
+
+On 2026-09-29, four real Jev API probes over synthetic AX observations selected
+the intended input field/value (two calls), Apply click, missing-text handoff and
+completion review (one call each). In that earlier protocol, the missing-text probe action head chose
+`help_input` while the pause head chose `help_reasoning`; the runner would honor
+the latter and still return to the host without typing. The latest repair removes
+that competing pause head; completion and handoff are now operation choices.
+A real-Jev/ simulated-form loop filled `hello`, clicked Apply and proposed review
+in four API calls. These checks used the actual request validation and task loop,
+but did not operate native Doubao or Calendar.
+
+Retained failure: an earlier loop using the existing unit-test computer requested
+Return submission, but Jev clicked its Apply button and then waited to the eight-
+step budget (nine API calls). That test double only implements Return submission,
+so Apply never produced a result. The later form implements its displayed Apply
+button and uses a click-Apply task. No runtime fix was made for this separate
+instruction-following/waiting failure; neither this failure nor the later success
+establishes native app reliability. Private requests and responses remain outside
+Git. Validation at that earlier snapshot: 139 runner tests and 22 evaluator tests passed;
+the latest report records 156 runner tests and 22 evaluator tests.
 
 Two real Jev + native CUA checks passed on an isolated local fixture: prepared text through final review (15.35 s), and missing-text handoff → caller supplies text → separate CLI process resumes with complete history → realtime mode → host completion (18.84 s active time). The first setup attempt correctly handed back from the wrong foreground window; the harness was fixed before the passing runs. See [sanitized evidence](general-task-verification.json). These are integration checks, not the requested representative benchmark or evidence of a cost advantage. Current validation is recorded in the follow-up below. The subsequent real general-protocol run completed all 8 answer checks, but was slower and more expensive than the reused baseline; two requests lacked billing data and one navigation left its granted public-site prefixes. See [development comparison](../evals/computer_use/general-development-comparison.json). It does not establish savings.
 

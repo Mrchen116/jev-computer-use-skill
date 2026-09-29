@@ -1,0 +1,953 @@
+{
+  "date": "2026-09-29",
+  "runs": [
+    {
+      "run": "jev-flights-personal-e2e-lum0lnfz/.",
+      "reason": "repeated_no_effect",
+      "seconds": 45.918,
+      "api_calls": 29,
+      "api_phases": {
+        "operation_target": 22,
+        "input_value": 4,
+        "review_operation_target": 3
+      },
+      "usage": {
+        "input_tokens": 378147,
+        "output_tokens": 44956
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 2,
+        "replace": 4,
+        "wait": 10,
+        "click": 5
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 0,
+        "one_way": false,
+        "economy": true,
+        "one_adult": false,
+        "date": false,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-09c6axf8/1",
+      "reason": "review_completion",
+      "seconds": 12.928,
+      "api_calls": 7,
+      "api_phases": {
+        "operation_target": 6,
+        "review_operation_target": 1
+      },
+      "usage": {
+        "input_tokens": 58633,
+        "output_tokens": 8562
+      },
+      "flow": {
+        "switch_app": 1,
+        "click": 2,
+        "key": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": false,
+      "flights": {
+        "option_count": 0,
+        "one_way": true,
+        "economy": true,
+        "one_adult": false,
+        "date": false,
+        "loading_indicator": true
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-4ehidtrp/1",
+      "reason": "review_completion",
+      "seconds": 9.975,
+      "api_calls": 2,
+      "api_phases": {
+        "operation_target": 2
+      },
+      "usage": {
+        "input_tokens": 16379,
+        "output_tokens": 2696
+      },
+      "flow": {
+        "switch_app": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": false,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-4ehidtrp/2",
+      "reason": "review_completion",
+      "seconds": 7.581,
+      "api_calls": 2,
+      "api_phases": {
+        "operation_target": 2
+      },
+      "usage": {
+        "input_tokens": 16379,
+        "output_tokens": 2696
+      },
+      "flow": {
+        "switch_app": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": false,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-4ehidtrp/3",
+      "reason": "review_completion",
+      "seconds": 5.407,
+      "api_calls": 2,
+      "api_phases": {
+        "operation_target": 2
+      },
+      "usage": {
+        "input_tokens": 16379,
+        "output_tokens": 2696
+      },
+      "flow": {
+        "switch_app": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": false,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-sq_dcfuk/1",
+      "reason": "input_unverified",
+      "seconds": 28.883,
+      "api_calls": 16,
+      "api_phases": {
+        "operation_target": 12,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 154020,
+        "output_tokens": 17454
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 3
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 0,
+        "one_way": false,
+        "economy": false,
+        "one_adult": false,
+        "date": false,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-mvgm18jt/1",
+      "reason": "help_input",
+      "seconds": 17.849,
+      "api_calls": 12,
+      "api_phases": {
+        "operation_target": 8,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 118171,
+        "output_tokens": 13301
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 2,
+        "replace": 2,
+        "click": 1,
+        "help_input": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 0,
+        "one_way": false,
+        "economy": true,
+        "one_adult": false,
+        "date": false,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-prjjxlwh/1",
+      "reason": "execution_error",
+      "seconds": 21.347,
+      "api_calls": 12,
+      "api_phases": {
+        "operation_target": 8,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 118972,
+        "output_tokens": 13362
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 2,
+        "replace": 3,
+        "click": 2
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 0,
+        "one_way": false,
+        "economy": true,
+        "one_adult": false,
+        "date": false,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-4q6oxgui/1",
+      "reason": "repeated_no_effect",
+      "seconds": 23.487,
+      "api_calls": 16,
+      "api_phases": {
+        "operation_target": 10,
+        "input_value": 6
+      },
+      "usage": {
+        "input_tokens": 133430,
+        "output_tokens": 14251
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 2,
+        "replace": 6,
+        "click": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 0,
+        "one_way": false,
+        "economy": false,
+        "one_adult": false,
+        "date": false,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-ll5avfwn/1",
+      "reason": "review_completion",
+      "seconds": 40.382,
+      "api_calls": 22,
+      "api_phases": {
+        "operation_target": 17,
+        "input_value": 4,
+        "review_operation_target": 1
+      },
+      "usage": {
+        "input_tokens": 247781,
+        "output_tokens": 29069
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-ll5avfwn/2",
+      "reason": "review_completion",
+      "seconds": 43.159,
+      "api_calls": 22,
+      "api_phases": {
+        "operation_target": 18,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 250718,
+        "output_tokens": 29256
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-ll5avfwn/3",
+      "reason": "review_completion",
+      "seconds": 41.681,
+      "api_calls": 22,
+      "api_phases": {
+        "operation_target": 18,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 250844,
+        "output_tokens": 29161
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": true
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-rf6odldf/1",
+      "reason": "review_completion",
+      "seconds": 33.314,
+      "api_calls": 23,
+      "api_phases": {
+        "operation_target": 17,
+        "input_value": 5,
+        "review_operation_target": 1
+      },
+      "usage": {
+        "input_tokens": 255946,
+        "output_tokens": 29380
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-rf6odldf/2",
+      "reason": "review_completion",
+      "seconds": 33.995,
+      "api_calls": 23,
+      "api_phases": {
+        "operation_target": 18,
+        "input_value": 4,
+        "review_operation_target": 1
+      },
+      "usage": {
+        "input_tokens": 265751,
+        "output_tokens": 31253
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-rf6odldf/3",
+      "reason": "review_completion",
+      "seconds": 32.223,
+      "api_calls": 23,
+      "api_phases": {
+        "operation_target": 19,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 261912,
+        "output_tokens": 30492
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 5,
+        "replace": 4,
+        "click": 6,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-doubao-final-87vzst1t/.",
+      "reason": "input_unverified",
+      "seconds": 6.065,
+      "api_calls": 4,
+      "api_phases": {
+        "operation_target": 3,
+        "input_value": 1
+      },
+      "usage": {
+        "input_tokens": 40386,
+        "output_tokens": 4897
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 1,
+        "replace": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": null,
+      "doubao_reply": false
+    },
+    {
+      "run": "jev-doubao-paste-2nzmdv8d/.",
+      "reason": "uncertain_action",
+      "seconds": 10.83,
+      "api_calls": 11,
+      "api_phases": {
+        "operation_target": 7,
+        "review_operation_target": 3,
+        "input_value": 1
+      },
+      "usage": {
+        "input_tokens": 108298,
+        "output_tokens": 13610
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 2,
+        "replace": 1,
+        "wait": 1,
+        "view_page": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": null,
+      "doubao_reply": false
+    },
+    {
+      "run": "jev-doubao-settled-kqbjik0l/.",
+      "reason": "review_completion",
+      "seconds": 7.778,
+      "api_calls": 6,
+      "api_phases": {
+        "operation_target": 5,
+        "input_value": 1
+      },
+      "usage": {
+        "input_tokens": 45179,
+        "output_tokens": 6189
+      },
+      "flow": {
+        "switch_app": 1,
+        "insert": 1,
+        "key": 1,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": false,
+      "flights": null,
+      "doubao_reply": true
+    },
+    {
+      "run": "jev-doubao-e2e-_aefjpun/.",
+      "reason": "input_unverified",
+      "seconds": 13.717,
+      "api_calls": 9,
+      "api_phases": {
+        "operation_target": 7,
+        "input_value": 2
+      },
+      "usage": {
+        "input_tokens": 86207,
+        "output_tokens": 10391
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 2,
+        "replace": 2,
+        "wait": 2
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": null,
+      "doubao_reply": false
+    },
+    {
+      "run": "jev-doubao-e2e-final-iyb36x0u/.",
+      "reason": "review_completion",
+      "seconds": 18.48,
+      "api_calls": 14,
+      "api_phases": {
+        "operation_target": 11,
+        "input_value": 3
+      },
+      "usage": {
+        "input_tokens": 130367,
+        "output_tokens": 15622
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 3,
+        "replace": 3,
+        "wait": 3,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": null,
+      "doubao_reply": true
+    },
+    {
+      "run": "jev-flights-stability-3twoyj_5/1",
+      "reason": "review_completion",
+      "seconds": 41.537,
+      "api_calls": 23,
+      "api_phases": {
+        "operation_target": 18,
+        "input_value": 5
+      },
+      "usage": {
+        "input_tokens": 259324,
+        "output_tokens": 29587
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-3twoyj_5/2",
+      "reason": "review_completion",
+      "seconds": 30.384,
+      "api_calls": 22,
+      "api_phases": {
+        "operation_target": 17,
+        "input_value": 5
+      },
+      "usage": {
+        "input_tokens": 231072,
+        "output_tokens": 26356
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-3twoyj_5/3",
+      "reason": "review_completion",
+      "seconds": 35.317,
+      "api_calls": 22,
+      "api_phases": {
+        "operation_target": 17,
+        "input_value": 5
+      },
+      "usage": {
+        "input_tokens": 241037,
+        "output_tokens": 27534
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 6,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": true
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-o19vt9hl/1",
+      "reason": "review_completion",
+      "seconds": 25.927,
+      "api_calls": 20,
+      "api_phases": {
+        "operation_target": 16,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 260694,
+        "output_tokens": 23366
+      },
+      "flow": {
+        "switch_app": 1,
+        "replace": 4,
+        "key": 3,
+        "click": 6,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": true
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-o19vt9hl/2",
+      "reason": "review_completion",
+      "seconds": 2.063,
+      "api_calls": 2,
+      "api_phases": {
+        "operation_target": 2
+      },
+      "usage": {
+        "input_tokens": 21928,
+        "output_tokens": 2707
+      },
+      "flow": {
+        "switch_app": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": false,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-opbqvfcp/1",
+      "reason": "review_completion",
+      "seconds": 36.065,
+      "api_calls": 24,
+      "api_phases": {
+        "operation_target": 19,
+        "input_value": 4,
+        "review_operation_target": 1
+      },
+      "usage": {
+        "input_tokens": 319697,
+        "output_tokens": 29225
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 7,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-opbqvfcp/2",
+      "reason": "review_completion",
+      "seconds": 34.91,
+      "api_calls": 22,
+      "api_phases": {
+        "operation_target": 18,
+        "input_value": 4
+      },
+      "usage": {
+        "input_tokens": 281928,
+        "output_tokens": 25754
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 7,
+        "wait": 1,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": false
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-flights-stability-opbqvfcp/3",
+      "reason": "review_completion",
+      "seconds": 46.869,
+      "api_calls": 34,
+      "api_phases": {
+        "operation_target": 27,
+        "input_value": 4,
+        "review_operation_target": 3
+      },
+      "usage": {
+        "input_tokens": 479153,
+        "output_tokens": 44409
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 4,
+        "replace": 4,
+        "click": 11,
+        "wait": 6,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": {
+        "option_count": 21,
+        "one_way": true,
+        "economy": true,
+        "one_adult": true,
+        "date": true,
+        "loading_indicator": true
+      },
+      "doubao_reply": null
+    },
+    {
+      "run": "jev-doubao-shared-targets-ohitgmys/.",
+      "reason": "review_completion",
+      "seconds": 18.354,
+      "api_calls": 11,
+      "api_phases": {
+        "operation_target": 9,
+        "input_value": 2
+      },
+      "usage": {
+        "input_tokens": 119190,
+        "output_tokens": 11898
+      },
+      "flow": {
+        "switch_app": 1,
+        "key": 3,
+        "replace": 2,
+        "wait": 2,
+        "review_completion": 1
+      },
+      "host_resumes": 0,
+      "host_task_ui_actions": 0,
+      "url_entered": true,
+      "flights": null,
+      "doubao_reply": true
+    }
+  ],
+  "notes": [
+    "Private raw native/model traces are intentionally excluded.",
+    "Runs on already-filled or existing-result pages are not counted as end-to-end navigation passes.",
+    "Elapsed values are runner active wall time, excluding outer fixture setup and final independent verification."
+  ],
+  "final_runtime_sha256": {
+    "skills/jev-computer-use/scripts/jev_computer_use/__init__.py": "78e1d0f2f44cadbe02f91649a5d6b520061fc85c8a7c115e81ab94cda94bc51c",
+    "skills/jev-computer-use/scripts/jev_computer_use/__main__.py": "1270764ac2e8b3f19a98d37b30ce383a57a71fcedba330221d652f0ce997e4de",
+    "skills/jev-computer-use/scripts/jev_computer_use/cli.py": "c11cda0801dee62cd971132fc628ff51164d95b6606224cddb811d0639862707",
+    "skills/jev-computer-use/scripts/jev_computer_use/collection.py": "c2e558faad3ecda7f168ae8c8faa8871467e801935079f9243e4e2242e93f5b7",
+    "skills/jev-computer-use/scripts/jev_computer_use/computer.py": "9c5b44afaac41c2a4b75a27404395cae96b796549926ddb56f1d43be994a846b",
+    "skills/jev-computer-use/scripts/jev_computer_use/control.py": "340bbc4fe3e338ce8d534d623938ef12db8839b9f2ea930b15554a1f5bcf6998",
+    "skills/jev-computer-use/scripts/jev_computer_use/decisions.py": "dea3f9b3ed55defe02d9a06439a4a0969e635f066756f85a240bbf0c1400d250",
+    "skills/jev-computer-use/scripts/jev_computer_use/desktop.py": "448615c2204dec0c244fb29348e0bb90ac11f950d8e0601ccbcde9916437c839",
+    "skills/jev-computer-use/scripts/jev_computer_use/doctor.py": "4a1f9e42b0704dfe11545a19ec034c76ad6360c8bc8ad8a7863c9ca6b3b5c54e",
+    "skills/jev-computer-use/scripts/jev_computer_use/eval_boundary.py": "6f25ab90bb2f3ec2b18575374ffe5b7a171af03bfee4ec2eeb94f33b40f5185e",
+    "skills/jev-computer-use/scripts/jev_computer_use/evidence.py": "ad66511635a8508f12e1ff60f181f0dfd9195522f42655056768f0d95ffa6b67",
+    "skills/jev-computer-use/scripts/jev_computer_use/host.py": "015d8981b083c64d862c8e0e43dcf6aed6b6e2eaf7e0fde4c166ff67ed8c36af",
+    "skills/jev-computer-use/scripts/jev_computer_use/mcp.py": "6bead55dcd64843c737cdee64a706c85e5bd95a459c268d1df1a4f6907e35414",
+    "skills/jev-computer-use/scripts/jev_computer_use/models.py": "61e342b2fa242c8dd8c756d4341a9e3b38238d0037ff777f4f16dd8dcee57a74",
+    "skills/jev-computer-use/scripts/jev_computer_use/observations.py": "4a197332e4c12c2a60be5c7fef4ad71badd583d2917073d71dfc99920d49a97a",
+    "skills/jev-computer-use/scripts/jev_computer_use/runtime.py": "14d6ca14c3f2529a25cd36829a87d4ade6fe47f4ca27ae53bf79fb47c3bfe970",
+    "skills/jev-computer-use/scripts/jev_computer_use/smoke.py": "d368166ca2cecf92b5ad55669137d401e0a92ba6b2eca26ff75e24d2bba580fc",
+    "skills/jev-computer-use/scripts/jev_computer_use/stage_cli.py": "25f5aa66a26faeb27c03650d11d25d9c4ea6068b21266e10eb35c883ba35eafb",
+    "skills/jev-computer-use/scripts/jev_computer_use/stage_state.py": "57267d4d27f94ac5d857f7efca5f6dcf0ee24a98a07594e45b6e476a0374998d",
+    "skills/jev-computer-use/scripts/jev_computer_use/stages.py": "6d7c13bb8e64f1a4dbdb8f178294b799679b9f0898f5e434f25558341b76ea12",
+    "skills/jev-computer-use/scripts/jev_computer_use/state.py": "32d79fa715a61c488deedd2bb7bd544c8dab96a73a7ab3319644730cb5e83c1d",
+    "skills/jev-computer-use/scripts/jev_computer_use/task_cli.py": "627bcfacc2c0f7f4750a047eb0d9a4f0eb118636b945e2ac4e65b90cd913015e",
+    "skills/jev-computer-use/scripts/jev_computer_use/tasks.py": "ed6bb0bb2f4f4b961c38a8a6ae41c4fc29519753fc705838e18f46d474c9ade3"
+  },
+  "final_acceptance_runs": [
+    "jev-flights-stability-opbqvfcp/1",
+    "jev-flights-stability-opbqvfcp/2",
+    "jev-flights-stability-opbqvfcp/3",
+    "jev-doubao-shared-targets-ohitgmys/."
+  ]
+}

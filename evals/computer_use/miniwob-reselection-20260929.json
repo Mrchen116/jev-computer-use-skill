@@ -1,0 +1,201 @@
+{
+  "protocol": "Hybrid-only, relaxed 300-second MiniWoB subset, official first raw reward must equal 1. No baseline comparison or standard leaderboard claim. Completion without outer UI actions still includes Sol planning, prepared inputs, guidance and final verification. Jev operations count runner actions; outer UI action calls may contain multiple actions, so their ratio is not an action-share percentage.",
+  "upstream_revision": "33c3b4ddef8c6eb67c57a29663d844b1eda7e614",
+  "runs": [
+    {
+      "case": "book-flight",
+      "seed": 11,
+      "arm": "hybrid",
+      "seconds": 103.518928959,
+      "setup_seconds": 9.512604375,
+      "llm_requests": 11,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.75691,
+        "reason": null,
+        "episode_seconds": 72.927,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Book the shortest one-way flight from: Emmonak, AK to: Steamboat Springs, CO on 11/19/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 10,
+          "input": 2,
+          "keydown": 12
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          3
+        ],
+        "outcomes": [
+          "uncertain_action"
+        ],
+        "jev_seconds": 3.289
+      },
+      "jev_action_types": {
+        "replace": 2,
+        "click": 1
+      },
+      "jev_executed_operations": 3,
+      "outer_ui_action_calls": 9,
+      "completion_without_outer_ui_actions": false,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 299831,
+        "cached_input_tokens": 268160,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1088,
+        "reasoning_output_tokens": 281
+      },
+      "jev_usage": {
+        "input_tokens": 56270,
+        "output_tokens": 3611
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "book-flight",
+      "seed": 22,
+      "arm": "hybrid",
+      "seconds": 111.26967554199999,
+      "setup_seconds": 9.808054666000004,
+      "llm_requests": 12,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.7275733333333334,
+        "reason": null,
+        "episode_seconds": 81.728,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Book the shortest one-way flight from: Plattsburgh, NY to: FNL on 12/01/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 11,
+          "input": 2,
+          "keydown": 7
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          3
+        ],
+        "outcomes": [
+          "uncertain_action"
+        ],
+        "jev_seconds": 3.952
+      },
+      "jev_action_types": {
+        "replace": 2,
+        "click": 1
+      },
+      "jev_executed_operations": 3,
+      "outer_ui_action_calls": 9,
+      "completion_without_outer_ui_actions": false,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 321396,
+        "cached_input_tokens": 299648,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1165,
+        "reasoning_output_tokens": 334
+      },
+      "jev_usage": {
+        "input_tokens": 56296,
+        "output_tokens": 3625
+      },
+      "unmetered_jev_calls": 0
+    },
+    {
+      "case": "book-flight",
+      "seed": 66,
+      "arm": "hybrid",
+      "seconds": 151.44174091599996,
+      "setup_seconds": 10.559883832999986,
+      "llm_requests": 16,
+      "model_verified": true,
+      "infrastructure_errors": [],
+      "judge": {
+        "success": true,
+        "checks": {
+          "official_raw_reward_one": true,
+          "single_episode": true
+        },
+        "raw_reward": 1,
+        "time_scaled_reward": 0.59553,
+        "reason": null,
+        "episode_seconds": 121.341,
+        "episodes_started": 1,
+        "episodes_finished": 1,
+        "query": "Book the shortest one-way flight from: Pasco, WA to: Santa Ana, CA on 10/22/2016.",
+        "minimum_operations": 5,
+        "observed_ui_events": {
+          "click": 11,
+          "input": 2,
+          "keydown": 12
+        },
+        "reaction_seconds": []
+      },
+      "delegation": {
+        "stages": 1,
+        "actions_per_stage": [
+          3
+        ],
+        "outcomes": [
+          "uncertain_action"
+        ],
+        "jev_seconds": 5.377000000000001
+      },
+      "jev_action_types": {
+        "replace": 2,
+        "click": 1
+      },
+      "jev_executed_operations": 3,
+      "outer_ui_action_calls": 12,
+      "completion_without_outer_ui_actions": false,
+      "vision_used": false,
+      "audit_violations": [],
+      "llm_usage": {
+        "input_tokens": 482078,
+        "cached_input_tokens": 445056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1507,
+        "reasoning_output_tokens": 402
+      },
+      "jev_usage": {
+        "input_tokens": 55921,
+        "output_tokens": 3611
+      },
+      "unmetered_jev_calls": 0
+    }
+  ],
+  "summary": {
+    "runs": 3,
+    "completed": 3,
+    "seconds": 366.23034541699997,
+    "jev_executed_operations": 9,
+    "outer_ui_action_calls": 30,
+    "completion_without_outer_ui_actions": 0
+  },
+  "telemetry_verified": true
+}
