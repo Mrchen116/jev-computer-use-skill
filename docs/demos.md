@@ -2,23 +2,37 @@
 
 | Demo | Result | Recording |
 | --- | --- | --- |
-| Tower Defense Clash · CrazyGames | Four waves, full health, three stars | [3:04, original speed](media/tower-defense-clash.mp4) |
+| Tower Defense Clash · CrazyGames · Level 40 | 13 waves, 450/500 health, three stars | [14:10, original speed](media/tower-defense-clash-level40.mp4) |
 | Garden Defenders | Three stars, zero mower use | [2:23, original speed](media/garden-defenders.mp4) |
 | Zoho invoice generator | Three items, zero tax, verified USD 440 | [0:59, original speed](media/zoho-invoice.mp4) |
 
 ## Tower Defense Clash — commercial game platform
 
-https://github.com/user-attachments/assets/868d250d-73a5-4f85-aed3-297e289af58b
+https://github.com/user-attachments/assets/7c9f1aa3-703e-4c44-b1aa-caf1a5dd8572
 
 On [CrazyGames](https://www.crazygames.com/game/tower-defense-clash), Jev chooses
-complete tower builds from live game state. The outer agent provides the strategy;
-the executor handles the chosen clicks and confirmation. The recorded run finishes
-all four waves with 500/500 health and three stars, without an intermediate LLM.
-The complete recording includes level entry, tutorial, combat and the verdict.
+complete builds, upgrades, spell targets and saving actions from live game state.
+The outer agent provides a strategy; code computes geometry and approximate action
+effects, enforces the declared investment stages, and executes the chosen mouse
+controls. This recording clears **level 40**, all **13 waves**, with **450/500
+health and three stars**, without an intermediate LLM call or strategy update.
 
-This uses a game-specific Phaser reader and Playwright pointer actions. No visual
-recognition, game-clock change or default-native-CUA support is implied. See
-[reproduction, timings and failed development runs](../evals/games/clash.md).
+The run took 849.13 seconds and made 243 calls to `jev-1.13.0`, using 2,540,140
+input tokens: **$0.10669** at $0.042 per million input tokens. This excludes outer
+agent preparation, debugging and review, and earlier attempts. Five spell actions
+were canceled because the chosen enemy group had already died; no wrong-location
+builds were observed.
+
+The uncut 14:10 recording includes level entry, combat and the victory screen.
+It was transcoded to H.264 MP4 without changing speed. The requested guest level
+was unlocked during setup; health, money, enemies, cooldowns and game time were
+not modified. The strategy has game-specific constraints; one recorded win is
+not a stable success-rate or general-gameplay claim.
+
+This uses a game-specific Phaser state reader and Playwright pointer actions.
+No visual recognition or default-native-CUA support is implied. The reader uses
+current engine state and static geometry, including offscreen areas, rather than
+future wave definitions. [Earlier level-1 demo and adapter background](../evals/games/clash.md).
 
 ## Garden Defenders — custom game adapter
 

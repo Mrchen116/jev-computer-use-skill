@@ -29,12 +29,12 @@ flowchart TD
 
 ## 看实际运行
 
-| CrazyGames 塔防 | Garden Defenders | Zoho 发票生成器 |
+| CrazyGames 塔防 · 第 40 关 | Garden Defenders | Zoho 发票生成器 |
 | :---: | :---: | :---: |
-| https://github.com/user-attachments/assets/868d250d-73a5-4f85-aed3-297e289af58b | https://github.com/user-attachments/assets/94e7fcb5-cbee-4383-ac2f-eef69b9584f7 | https://github.com/user-attachments/assets/2d8004de-8e3c-45e3-b9f4-b8397f276988 |
-| 满血、三颗星通关 | 零割草机、三颗星通关 | 完整填写并核验金额 |
-| **$0.00579** Jev 费用 | **$0.00388** Jev 费用 | **$0.01384** Jev 费用 |
-| 输入 137,768 token | 输入 92,367 token | 输入 329,495 token |
+| https://github.com/user-attachments/assets/7c9f1aa3-703e-4c44-b1aa-caf1a5dd8572 | https://github.com/user-attachments/assets/94e7fcb5-cbee-4383-ac2f-eef69b9584f7 | https://github.com/user-attachments/assets/2d8004de-8e3c-45e3-b9f4-b8397f276988 |
+| 第 40 关：13 波、450/500 血、三颗星通关 | 零割草机、三颗星通关 | 完整填写并核验金额 |
+| **$0.10669** Jev 费用 | **$0.00388** Jev 费用 | **$0.01384** Jev 费用 |
+| 输入 2,540,140 token | 输入 92,367 token | 输入 329,495 token |
 
 以上为对应录像单次运行的费用，运行中无 LLM 介入。[Jev 单价](https://typesafe.ai/blog/introducing-system-one-models-and-jev)：
 输入 $0.042／百万 token，输出免费；不含外层 Agent 的准备、调试、核验和此前失败轮次。

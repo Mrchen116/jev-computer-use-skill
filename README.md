@@ -31,12 +31,12 @@ whole task, complete current accessibility tree and every concise step record.
 
 ## Watch it work
 
-| Tower Defense Clash · CrazyGames | Garden Defenders | Zoho invoice generator |
+| Tower Defense Clash · CrazyGames · Level 40 | Garden Defenders | Zoho invoice generator |
 | :---: | :---: | :---: |
-| https://github.com/user-attachments/assets/868d250d-73a5-4f85-aed3-297e289af58b | https://github.com/user-attachments/assets/94e7fcb5-cbee-4383-ac2f-eef69b9584f7 | https://github.com/user-attachments/assets/2d8004de-8e3c-45e3-b9f4-b8397f276988 |
-| Full-health, three-star victory | Three stars, zero mower use | Complete invoice with verified totals |
-| **$0.00579** Jev cost | **$0.00388** Jev cost | **$0.01384** Jev cost |
-| 137,768 input tokens | 92,367 input tokens | 329,495 input tokens |
+| https://github.com/user-attachments/assets/7c9f1aa3-703e-4c44-b1aa-caf1a5dd8572 | https://github.com/user-attachments/assets/94e7fcb5-cbee-4383-ac2f-eef69b9584f7 | https://github.com/user-attachments/assets/2d8004de-8e3c-45e3-b9f4-b8397f276988 |
+| Level 40: 13 waves, 450/500 health, three stars | Three stars, zero mower use | Complete invoice with verified totals |
+| **$0.10669** Jev cost | **$0.00388** Jev cost | **$0.01384** Jev cost |
+| 2,540,140 input tokens | 92,367 input tokens | 329,495 input tokens |
 
 Per recorded run, with no intermediate LLM calls. [Jev pricing](https://typesafe.ai/blog/introducing-system-one-models-and-jev):
 $0.042 per million input tokens; output is free. Excludes outer-agent setup,
